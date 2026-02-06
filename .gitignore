@@ -1,0 +1,5 @@
+./results/*
+./bin/*
+./obj/*
+./*.log
+*.tmp
