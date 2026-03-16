@@ -1,9 +1,9 @@
-./results/
-./bin/*
+/results/
+/bin/*
 ./obj/*
 ./*.log
 *.tmp
-./workloads/*
+/workloads/*
 tracer/testcase/myTrace/
 *.trace
 *.out
