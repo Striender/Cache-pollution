@@ -3,7 +3,7 @@
 ./obj/*
 ./*.log
 *.tmp
-./workloads/
+./workloads/*
 tracer/testcase/myTrace/
 *.trace
 *.out
