@@ -210,7 +210,7 @@ void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t tak
 	//bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc) && (branch_target != 0);
 	
  
-	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc);
+	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL   ) && (branch_target > pc);
    
 	bool correct = taken == (yout[cpu] >= 1);
 	// Only process if it is a loop branch
@@ -247,32 +247,41 @@ void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t tak
 
 			// 3. Increment loop instances
 			// entry.loop_instances++;
-			cout <<"PC "<< hex <<pc <<dec << " " << entry.non_speculatie_counter << endl;
+			cout <<"PC "<< hex <<pc <<dec << " " << "trip count: " <<entry.trip_count  << " "  <<entry.non_speculatie_counter<< endl;
 			// 4. Reset for the next time the loop runs
 			entry.non_speculatie_counter = 0;
 		}
-	}else if (is_forward_conditional && taken)
-    {
-        // A forward branch was taken. Check if it escapes an active loop!
-        for (auto& pair : loopBuffer) 
-        {
-            uint64_t loop_pc = pair.first;
-            loopBf_entry& entry = pair.second;
+	}
+	else if (is_forward_conditional )
+	{
+		for (auto& pair : loopBuffer) 
+		{
+			uint64_t loop_pc = pair.first;
+			loopBf_entry& entry = pair.second;
 
-            // If the jump is located inside the loop (pc < loop_pc) 
-            // BUT lands outside the loop (branch_target > loop_pc), it is a BREAK!
-            if (pc < loop_pc && branch_target > loop_pc) 
-            {
-                cout << " ---> BREAK DETECTED! Updating Trip Count to: " << entry.non_speculatie_counter << endl;
-                
-                // Record the break iteration as the trip count!
-                entry.trip_count = entry.non_speculatie_counter;
-                
-                // Reset the counter for the next time the loop runs
-                entry.non_speculatie_counter = 0;
-            }
-        }
-    }
+			uint64_t loop_start = entry.targetAddress ; 
+
+			 
+			// 1. Ensure loop_start was actually initialized (loop_start != 0)
+			// 2. Jump originates INSIDE the loop body: (pc >= loop_start && pc < loop_pc)
+			// 3. Jump lands OUTSIDE the loop body: (branch_target > loop_pc)
+			if (loop_start != 0 && pc >= loop_start && pc < loop_pc && branch_target > loop_pc) 
+			{
+				cout << " ---> BREAK DETECTED! Updating Trip Count to: " 
+				     << " loop PC: " << hex << loop_pc 
+					<< " loop start: " << loop_start
+				     << " if PC: " << pc 
+				     << " target PC: " << branch_target 
+				     << " | Count: " << dec << entry.non_speculatie_counter << endl;
+				
+				// Record the break iteration as the trip count
+				entry.trip_count = entry.non_speculatie_counter;
+				
+				// Reset the counter for the next time the loop runs
+				entry.non_speculatie_counter = 0;
+			}
+		}
+	}
 
 
 
