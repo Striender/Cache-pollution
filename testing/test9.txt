@@ -1,0 +1,2740 @@
+Initialize SIGNATURE TABLE
+ST_SET: 1
+ST_WAY: 256
+ST_TAG_BIT: 16
+ST_TAG_MASK: ffff
+
+Initialize PATTERN TABLE
+PT_SET: 512
+PT_WAY: 4
+SIG_DELTA_BIT: 7
+C_SIG_BIT: 4
+C_DELTA_BIT: 4
+
+Initialize PREFETCH FILTER
+FILTER_SET: 1024
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 1000000
+Simulation Instructions: 4000000
+Number of CPUs: 1
+LLC sets: 4096
+LLC ways: 12
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 6400 MT/s
+CPU 0 runs tracer/testcase/myTrace/test9-a-b.xz
+.xz
+BTB has LRU replacement policy
+ITLB has LRU replacement policy
+DTLB has LRU replacement policy
+STLB has LRU replacement policy
+L1I has LRU replacement policy
+CPU 0 L1D IP-based stride prefetcher
+L1D has LRU replacement policy
+ST_WAYS: 256
+PT_SETS: 512
+Initialize SRRIP state for L2C
+Initialize Mockingjay state for LLC
+----------------
+PC: 7f898342a88b ,Branch Target: 0, Correct: 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342a893 ,Branch Target: 7f898342a880, Correct: 0
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 4 NSC 4
+----------------
+PC: 7f8983557ce8 ,Branch Target: 0, Correct: 1
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983557cfb ,Branch Target: 0, Correct: 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983557d39 ,Branch Target: 7f8983557d20, Correct: 0
+----------------
+PC: 7f898342a8a5 ,Branch Target: 7f898342a880, Correct: 0
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 9 NSC 9
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a8a5 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 2
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a893 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 10
+----------------
+PC: 7f898342a8d2 ,Branch Target: 0, Correct: 0
+PC 7f898342a8d2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834901a7 ,Branch Target: 0, Correct: 0
+PC 7f89834901a7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e1c4 ,Branch Target: 0, Correct: 1
+PC 7f898348e1c4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e1d8 ,Branch Target: 0, Correct: 1
+PC 7f898348e1d8 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e1e5 ,Branch Target: 0, Correct: 1
+PC 7f898348e1e5 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e337 ,Branch Target: 0, Correct: 1
+PC 7f898348e337 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e34f ,Branch Target: 0, Correct: 1
+PC 7f898348e34f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e363 ,Branch Target: 0, Correct: 1
+PC 7f898348e363 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e377 ,Branch Target: 0, Correct: 1
+PC 7f898348e377 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e3b6 ,Branch Target: 0, Correct: 1
+PC 7f898348e3b6 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e868 ,Branch Target: 0, Correct: 1
+PC 7f898348e868 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348e8c5 ,Branch Target: 0, Correct: 1
+PC 7f898348e8c5 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348ec37 ,Branch Target: 0, Correct: 1
+PC 7f898348ec37 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348ec4c ,Branch Target: 0, Correct: 1
+PC 7f898348ec4c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348ec5a ,Branch Target: 0, Correct: 1
+PC 7f898348ec5a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348d992 ,Branch Target: 0, Correct: 1
+PC 7f898348d992 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348d99f ,Branch Target: 0, Correct: 1
+PC 7f898348d99f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348d9c3 ,Branch Target: 0, Correct: 1
+PC 7f898348d9c3 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348dc1c ,Branch Target: 0, Correct: 1
+PC 7f898348dc1c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348cf9b ,Branch Target: 0, Correct: 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834f7478 ,Branch Target: 0, Correct: 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834ffd3d ,Branch Target: 0, Correct: 0
+PC 7f89834ffd3d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834ffce2 ,Branch Target: 0, Correct: 1
+PC 7f89834ffce2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834ffce4 ,Branch Target: 0, Correct: 0
+PC 7f89834ffce4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834ffced ,Branch Target: 0, Correct: 1
+PC 7f89834ffced TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834ffcfe ,Branch Target: 0, Correct: 1
+PC 7f89834ffcfe TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348cfaa ,Branch Target: 0, Correct: 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348dea2 ,Branch Target: 0, Correct: 1
+PC 7f898348dea2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348def6 ,Branch Target: 0, Correct: 1
+PC 7f898348def6 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348dcc8 ,Branch Target: 0, Correct: 1
+PC 7f898348dcc8 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348dd27 ,Branch Target: 0, Correct: 1
+PC 7f898348dd27 TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834ffcdd ,Branch Target: 0, Correct: 0
+PC 7f89834ffcdd TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348dd4b ,Branch Target: 0, Correct: 1
+PC 7f898348dd4b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348dd5f ,Branch Target: 0, Correct: 1
+PC 7f898348dd5f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348df78 ,Branch Target: 7f898348da80, Correct: 1
+----------------
+PC: 7f898348da8e ,Branch Target: 0, Correct: 1
+PC 7f898348da8e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348daa2 ,Branch Target: 0, Correct: 1
+PC 7f898348daa2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348daea ,Branch Target: 0, Correct: 1
+PC 7f898348daea TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348f139 ,Branch Target: 0, Correct: 1
+PC 7f898348f139 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348b7db ,Branch Target: 0, Correct: 1
+PC 7f898348b7db TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348f322 ,Branch Target: 0, Correct: 1
+PC 7f898348f322 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348f32b ,Branch Target: 0, Correct: 1
+PC 7f898348f32b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348f334 ,Branch Target: 7f898348f28f, Correct: 1
+----------------
+PC: 7f898361b2c6 ,Branch Target: 0, Correct: 1
+PC 7f898361b2c6 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad54ad ,Branch Target: 7f8997ad5498, Correct: 0
+----------------
+PC: 7f898361b33e ,Branch Target: 0, Correct: 1
+PC 7f898361b33e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b36d ,Branch Target: 0, Correct: 1
+PC 7f898361b36d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b38c ,Branch Target: 0, Correct: 1
+PC 7f898361b38c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b3bb ,Branch Target: 0, Correct: 1
+PC 7f898361b3bb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b5ce ,Branch Target: 0, Correct: 1
+PC 7f898361b5ce TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b5dd ,Branch Target: 0, Correct: 1
+PC 7f898361b5dd TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b5ec ,Branch Target: 0, Correct: 0
+PC 7f898361b5ec TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b5fb ,Branch Target: 0, Correct: 0
+PC 7f898361b5fb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b60a ,Branch Target: 0, Correct: 1
+PC 7f898361b60a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b619 ,Branch Target: 0, Correct: 1
+PC 7f898361b619 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b628 ,Branch Target: 0, Correct: 1
+PC 7f898361b628 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b637 ,Branch Target: 0, Correct: 1
+PC 7f898361b637 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b64e ,Branch Target: 0, Correct: 1
+PC 7f898361b64e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b65d ,Branch Target: 0, Correct: 1
+PC 7f898361b65d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b66c ,Branch Target: 0, Correct: 1
+PC 7f898361b66c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b67b ,Branch Target: 0, Correct: 1
+PC 7f898361b67b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b68a ,Branch Target: 0, Correct: 1
+PC 7f898361b68a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b699 ,Branch Target: 0, Correct: 1
+PC 7f898361b699 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b6a8 ,Branch Target: 0, Correct: 0
+PC 7f898361b6a8 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b6b7 ,Branch Target: 0, Correct: 1
+PC 7f898361b6b7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b6ce ,Branch Target: 0, Correct: 1
+PC 7f898361b6ce TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b6dd ,Branch Target: 0, Correct: 1
+PC 7f898361b6dd TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b6ec ,Branch Target: 0, Correct: 1
+PC 7f898361b6ec TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b6fb ,Branch Target: 0, Correct: 1
+PC 7f898361b6fb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b70a ,Branch Target: 0, Correct: 1
+PC 7f898361b70a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b719 ,Branch Target: 0, Correct: 1
+PC 7f898361b719 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b728 ,Branch Target: 0, Correct: 1
+PC 7f898361b728 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b737 ,Branch Target: 0, Correct: 1
+PC 7f898361b737 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b746 ,Branch Target: 0, Correct: 1
+PC 7f898361b746 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b755 ,Branch Target: 0, Correct: 1
+PC 7f898361b755 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b764 ,Branch Target: 0, Correct: 0
+PC 7f898361b764 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b773 ,Branch Target: 0, Correct: 0
+PC 7f898361b773 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b78e ,Branch Target: 0, Correct: 1
+PC 7f898361b78e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b79d ,Branch Target: 0, Correct: 1
+PC 7f898361b79d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b7ac ,Branch Target: 0, Correct: 1
+PC 7f898361b7ac TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b7bb ,Branch Target: 0, Correct: 1
+PC 7f898361b7bb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b7ca ,Branch Target: 0, Correct: 1
+PC 7f898361b7ca TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b7d9 ,Branch Target: 0, Correct: 1
+PC 7f898361b7d9 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b7e8 ,Branch Target: 0, Correct: 1
+PC 7f898361b7e8 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b7f7 ,Branch Target: 0, Correct: 1
+PC 7f898361b7f7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b806 ,Branch Target: 0, Correct: 0
+PC 7f898361b806 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b815 ,Branch Target: 0, Correct: 1
+PC 7f898361b815 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b824 ,Branch Target: 0, Correct: 0
+PC 7f898361b824 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b833 ,Branch Target: 0, Correct: 1
+PC 7f898361b833 TA 0 trip count: 1 NSC 1
+PC 7f8997ad54ad TA 0 trip count: 7 NSC 7
+----------------
+PC: 7f8997ad5581 ,Branch Target: 7f8997ad5560, Correct: 0
+----------------
+PC: 7f8997ad5412 ,Branch Target: 0, Correct: 1
+PC 7f8997ad5412 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad54c2 ,Branch Target: 7f8997ad54af, Correct: 1
+PC 7f8997ad5581 TA 0 trip count: 2 NSC 2
+----------------
+PC: 7f8983410605 ,Branch Target: 0, Correct: 1
+PC 7f8983410605 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429124 ,Branch Target: 0, Correct: 0
+PC 7f8983429124 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429145 ,Branch Target: 0, Correct: 1
+PC 7f8983429145 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983428feb ,Branch Target: 0, Correct: 0
+PC 7f8983428feb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429007 ,Branch Target: 0, Correct: 1
+PC 7f8983429007 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429037 ,Branch Target: 7f8983429020, Correct: 0
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429037 loop start: 7f8983429020 if PC: 7f898342902e target PC: 7f8983429058 | Count: 1
+----------------
+PC: 7f898342905c ,Branch Target: 0, Correct: 1
+PC 7f898342905c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429152 ,Branch Target: 0, Correct: 1
+PC 7f8983429152 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429185 ,Branch Target: 0, Correct: 1
+PC 7f8983429185 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983410624 ,Branch Target: 0, Correct: 1
+PC 7f8983410624 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898341067c ,Branch Target: 0, Correct: 1
+PC 7f898341067c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898341069f ,Branch Target: 0, Correct: 0
+PC 7f898341069f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834106b2 ,Branch Target: 0, Correct: 0
+PC 7f89834106b2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834106eb ,Branch Target: 0, Correct: 1
+PC 7f89834106eb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae8f9c ,Branch Target: 0, Correct: 1
+PC 7f8997ae8f9c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983410653 ,Branch Target: 0, Correct: 1
+PC 7f8983410653 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983426e46 ,Branch Target: 0, Correct: 1
+PC 7f8983426e46 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983410575 ,Branch Target: 0, Correct: 1
+PC 7f8983410575 TA 0 trip count: 1 NSC 1
+----------------
+PC: 40048f ,Branch Target: 0, Correct: 0
+PC 40048f TA 0 trip count: 1 NSC 1
+----------------
+PC: 4004bb ,Branch Target: 4004b3, Correct: 1
+
+Warmup complete CPU 0 instructions: 1000001 cycles: 335317 (Simulation time: 0 hr 0 min 2 sec) 
+
+PC 4004bb TA 0 trip count: 500000 NSC 500000
+----------------
+PC: 7f898342981e ,Branch Target: 0, Correct: 0
+PC 7f898342981e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342982f ,Branch Target: 0, Correct: 0
+PC 7f898342982f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342985d ,Branch Target: 0, Correct: 0
+PC 7f898342985d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429876 ,Branch Target: 0, Correct: 0
+PC 7f8983429876 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429883 ,Branch Target: 0, Correct: 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834298a7 ,Branch Target: 0, Correct: 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834299d7 ,Branch Target: 0, Correct: 1
+PC 7f89834299d7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad518d ,Branch Target: 0, Correct: 1
+PC 7f8997ad518d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898348293d ,Branch Target: 0, Correct: 1
+PC 7f898348293d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834829ee ,Branch Target: 0, Correct: 1
+PC 7f89834829ee TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834829f9 ,Branch Target: 0, Correct: 1
+PC 7f89834829f9 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983482a54 ,Branch Target: 0, Correct: 1
+PC 7f8983482a54 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983482a5d ,Branch Target: 0, Correct: 1
+PC 7f8983482a5d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983482a63 ,Branch Target: 0, Correct: 1
+PC 7f8983482a63 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983482a70 ,Branch Target: 0, Correct: 1
+PC 7f8983482a70 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad51b2 ,Branch Target: 0, Correct: 1
+PC 7f8997ad51b2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad527f ,Branch Target: 0, Correct: 1
+PC 7f8997ad527f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad52b0 ,Branch Target: 0, Correct: 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad52b4 ,Branch Target: 0, Correct: 0
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad52d7 ,Branch Target: 7f8997ad52ac, Correct: 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52d7 TA 0 trip count: 7 NSC 7
+----------------
+PC: 7f8997ad52e1 ,Branch Target: 0, Correct: 1
+PC 7f8997ad52e1 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad52e5 ,Branch Target: 0, Correct: 1
+PC 7f8997ad52e5 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae1c51 ,Branch Target: 0, Correct: 1
+PC 7f8997ae1c51 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae1c6e ,Branch Target: 7f8997ae1c5d, Correct: 0
+PC 7f8997ae1c6e TA 0 trip count: 7 NSC 7
+----------------
+PC: 7f8997ae1cb1 ,Branch Target: 0, Correct: 1
+PC 7f8997ae1cb1 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae1d08 ,Branch Target: 0, Correct: 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae18e2 ,Branch Target: 7f8997ae1889, Correct: 0
+----------------
+PC: 7f8997ae1d21 ,Branch Target: 7f8997ae1cf0, Correct: 0
+----------------
+PC: 7f8997ae1cf7 ,Branch Target: 0, Correct: 0
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae185f ,Branch Target: 0, Correct: 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae1867 ,Branch Target: 0, Correct: 0
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae1875 ,Branch Target: 0, Correct: 0
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae1882 ,Branch Target: 7f8997ae186e, Correct: 0
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 2 NSC 2
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 2 NSC 2
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 3 NSC 3
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 4 NSC 4
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 6 NSC 6
+PC 7f8997ae1d21 TA 0 trip count: 7 NSC 7
+----------------
+PC: 7f8997af4f8b ,Branch Target: 0, Correct: 0
+PC 7f8997af4f8b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997af5017 ,Branch Target: 0, Correct: 1
+PC 7f8997af5017 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997af5021 ,Branch Target: 7f8997af4ff1, Correct: 0
+----------------
+PC: 7f8997ae1d8b ,Branch Target: 0, Correct: 1
+PC 7f8997ae1d8b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983484319 ,Branch Target: 0, Correct: 1
+PC 7f8983484319 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834843a7 ,Branch Target: 0, Correct: 1
+PC 7f89834843a7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834843c1 ,Branch Target: 7f898348432a, Correct: 0
+----------------
+PC: 7f898348433e ,Branch Target: 0, Correct: 1
+PC 7f898348433e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983484347 ,Branch Target: 0, Correct: 0
+PC 7f8983484347 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad532d ,Branch Target: 0, Correct: 0
+PC 7f8997ad532d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad535c ,Branch Target: 0, Correct: 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad128b ,Branch Target: 0, Correct: 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad12a3 ,Branch Target: 0, Correct: 0
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad12b4 ,Branch Target: 0, Correct: 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 40041b ,Branch Target: 0, Correct: 1
+PC 40041b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad12d9 ,Branch Target: 0, Correct: 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad12e5 ,Branch Target: 0, Correct: 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ae8eec ,Branch Target: 0, Correct: 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad534f ,Branch Target: 0, Correct: 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 2 NSC 2
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b8db ,Branch Target: 0, Correct: 0
+PC 7f898361b8db TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898361b8e9 ,Branch Target: 0, Correct: 0
+PC 7f898361b8e9 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342926c ,Branch Target: 0, Correct: 0
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342927c ,Branch Target: 0, Correct: 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429294 ,Branch Target: 0, Correct: 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429384 ,Branch Target: 7f8983429360, Correct: 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+----------------
+PC: 7f8983429433 ,Branch Target: 0, Correct: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429449 ,Branch Target: 0, Correct: 0
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429456 ,Branch Target: 0, Correct: 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429463 ,Branch Target: 7f8983429296, Correct: 0
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898372c44c ,Branch Target: 0, Correct: 1
+PC 7f898372c44c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898372c451 ,Branch Target: 0, Correct: 1
+PC 7f898372c451 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836322c5 ,Branch Target: 0, Correct: 0
+PC 7f89836322c5 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0bef ,Branch Target: 0, Correct: 0
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0e02 ,Branch Target: 0, Correct: 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c0a ,Branch Target: 0, Correct: 0
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983469127 ,Branch Target: 0, Correct: 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834691cb ,Branch Target: 0, Correct: 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898346915c ,Branch Target: 0, Correct: 0
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983476c76 ,Branch Target: 0, Correct: 0
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983469170 ,Branch Target: 0, Correct: 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983469183 ,Branch Target: 0, Correct: 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983469187 ,Branch Target: 0, Correct: 0
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c24 ,Branch Target: 0, Correct: 0
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0db5 ,Branch Target: 0, Correct: 0
+PC 7f89836b0db5 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0ded ,Branch Target: 0, Correct: 1
+PC 7f89836b0ded TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c3a ,Branch Target: 0, Correct: 0
+PC 7f89836b0c3a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c41 ,Branch Target: 0, Correct: 1
+PC 7f89836b0c41 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c4f ,Branch Target: 0, Correct: 0
+PC 7f89836b0c4f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c6b ,Branch Target: 0, Correct: 0
+PC 7f89836b0c6b TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b0c76 ,Branch Target: 0, Correct: 1
+PC 7f89836b0c76 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3b2f ,Branch Target: 0, Correct: 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3d42 ,Branch Target: 0, Correct: 0
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3b4a ,Branch Target: 0, Correct: 0
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3b64 ,Branch Target: 0, Correct: 0
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3cf5 ,Branch Target: 0, Correct: 0
+PC 7f89836b3cf5 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3d2d ,Branch Target: 0, Correct: 1
+PC 7f89836b3d2d TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3b7a ,Branch Target: 0, Correct: 0
+PC 7f89836b3b7a TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3b81 ,Branch Target: 0, Correct: 1
+PC 7f89836b3b81 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3b8f ,Branch Target: 0, Correct: 0
+PC 7f89836b3b8f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3bab ,Branch Target: 0, Correct: 0
+PC 7f89836b3bab TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89836b3bb6 ,Branch Target: 0, Correct: 1
+PC 7f89836b3bb6 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+PC 7f8983429463 TA 0 trip count: 4 NSC 4
+----------------
+PC: 7f89834292d6 ,Branch Target: 0, Correct: 1
+PC 7f89834292d6 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834292e2 ,Branch Target: 0, Correct: 0
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429329 ,Branch Target: 0, Correct: 0
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342932e ,Branch Target: 0, Correct: 0
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834e941e ,Branch Target: 0, Correct: 0
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834e954b ,Branch Target: 0, Correct: 0
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429341 ,Branch Target: 0, Correct: 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983c058ab ,Branch Target: 0, Correct: 0
+PC 7f8983c058ab TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983c058b9 ,Branch Target: 0, Correct: 1
+PC 7f8983c058b9 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342938d ,Branch Target: 0, Correct: 0
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983429397 ,Branch Target: 0, Correct: 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834293a0 ,Branch Target: 7f8983429380, Correct: 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f89834293a0 TA 0 trip count: 2 NSC 2
+----------------
+PC: 7f89834293a8 ,Branch Target: 0, Correct: 1
+PC 7f89834293a8 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89839d4b61 ,Branch Target: 0, Correct: 1
+PC 7f89839d4b61 TA 0 trip count: 1 NSC 1
+PC 7f89839d4b61 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89839d5d3b ,Branch Target: 0, Correct: 1
+PC 7f89839d5d3b TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89839d5d49 ,Branch Target: 0, Correct: 0
+PC 7f89839d5d49 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f89834293a0 TA 0 trip count: 2 NSC 2
+PC 7f89834293a8 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 2 NSC 2
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad51df ,Branch Target: 0, Correct: 1
+PC 7f8997ad51df TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad51e5 ,Branch Target: 0, Correct: 0
+PC 7f8997ad51e5 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad51fc ,Branch Target: 0, Correct: 1
+PC 7f8997ad51fc TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8997ad5205 ,Branch Target: 0, Correct: 1
+PC 7f8997ad5205 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834299ec ,Branch Target: 7f89834298f8, Correct: 0
+----------------
+PC: 7f8983429902 ,Branch Target: 0, Correct: 0
+PC 7f8983429902 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898342990f ,Branch Target: 7f8983429889, Correct: 0
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834298b1 ,Branch Target: 0, Correct: 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834298bb ,Branch Target: 7f898342987c, Correct: 0
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834298bb loop start: 7f898342987c if PC: 7f8983429883 target PC: 7f8983429915 | Count: 4
+----------------
+PC: 7f898342994e ,Branch Target: 0, Correct: 1
+PC 7f898342994e TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834299ec loop start: 7f89834298f8 if PC: 7f8983429958 target PC: 7f8983429a55 | Count: 1
+----------------
+PC: 7f898347c3a9 ,Branch Target: 0, Correct: 1
+PC 7f898347c3a9 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479655 ,Branch Target: 0, Correct: 1
+PC 7f8983479655 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834799b6 ,Branch Target: 7f8983479695, Correct: 1
+----------------
+PC: 7f8983479763 ,Branch Target: 0, Correct: 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479780 ,Branch Target: 0, Correct: 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834797ba ,Branch Target: 0, Correct: 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834797c8 ,Branch Target: 0, Correct: 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834797cf ,Branch Target: 0, Correct: 0
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834797dd ,Branch Target: 0, Correct: 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834796fc ,Branch Target: 0, Correct: 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898347970f ,Branch Target: 0, Correct: 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479717 ,Branch Target: 0, Correct: 0
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479752 ,Branch Target: 0, Correct: 1
+PC 7f8983479752 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f8983479752 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834798b7 ,Branch Target: 0, Correct: 1
+PC 7f89834798b7 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834798c1 ,Branch Target: 0, Correct: 0
+PC 7f89834798c1 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f89834798ee ,Branch Target: 0, Correct: 0
+PC 7f89834798ee TA 0 trip count: 1 NSC 1
+PC 7f898347c3a9 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479dad ,Branch Target: 0, Correct: 0
+PC 7f8983479dad TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898347a0fb ,Branch Target: 7f8983479ded, Correct: 0
+----------------
+PC: 7f8983479e83 ,Branch Target: 0, Correct: 0
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479ea0 ,Branch Target: 0, Correct: 0
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479f0b ,Branch Target: 7f8983479e08, Correct: 0
+----------------
+PC: 7f8983479e29 ,Branch Target: 0, Correct: 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479e3c ,Branch Target: 0, Correct: 0
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479e44 ,Branch Target: 0, Correct: 0
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479e72 ,Branch Target: 0, Correct: 0
+PC 7f8983479e72 TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 1
+----------------
+PC: 7f8983479e0c ,Branch Target: 0, Correct: 0
+PC 7f8983479e0c TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f8983479e16 ,Branch Target: 0, Correct: 0
+PC 7f8983479e16 TA 0 trip count: 1 NSC 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+PC 7f8983479e72 TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 1
+PC 7f8983479e0c TA 0 trip count: 1 NSC 1
+PC 7f8983479e16 TA 0 trip count: 1 NSC 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479e72 target PC: 7f898347a010 | Count: 1
+----------------
+PC: 7f898347a017 ,Branch Target: 0, Correct: 1
+PC 7f898347a017 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898347a021 ,Branch Target: 0, Correct: 0
+PC 7f898347a021 TA 0 trip count: 1 NSC 1
+----------------
+PC: 7f898347a04e ,Branch Target: 0, Correct: 1
+PC 7f898347a04e TA 0 trip count: 1 NSC 1
+*** Reached end of trace for Core: 0 Repeating trace: tracer/testcase/myTrace/test9-a-b.xz
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 4 NSC 4
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 9 NSC 9
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a893 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 10
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a8a5 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 2
+PC 7f898342a8d2 TA 0 trip count: 1 NSC 1
+PC 7f89834901a7 TA 0 trip count: 1 NSC 1
+PC 7f898348e1c4 TA 0 trip count: 1 NSC 1
+PC 7f898348e1d8 TA 0 trip count: 1 NSC 1
+PC 7f898348e1e5 TA 0 trip count: 1 NSC 1
+PC 7f898348e337 TA 0 trip count: 1 NSC 1
+PC 7f898348e34f TA 0 trip count: 1 NSC 1
+PC 7f898348e363 TA 0 trip count: 1 NSC 1
+PC 7f898348e377 TA 0 trip count: 1 NSC 1
+PC 7f898348e3b6 TA 0 trip count: 1 NSC 1
+PC 7f898348e868 TA 0 trip count: 1 NSC 1
+PC 7f898348e8c5 TA 0 trip count: 1 NSC 1
+PC 7f898348ec37 TA 0 trip count: 1 NSC 1
+PC 7f898348ec4c TA 0 trip count: 1 NSC 1
+PC 7f898348ec5a TA 0 trip count: 1 NSC 1
+PC 7f898348d992 TA 0 trip count: 1 NSC 1
+PC 7f898348d99f TA 0 trip count: 1 NSC 1
+PC 7f898348d9c3 TA 0 trip count: 1 NSC 1
+PC 7f898348dc1c TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+PC 7f89834ffd3d TA 0 trip count: 1 NSC 1
+PC 7f89834ffce2 TA 0 trip count: 2 NSC 2
+PC 7f89834ffce4 TA 0 trip count: 1 NSC 1
+PC 7f89834ffced TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+PC 7f89834ffcfe TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+PC 7f898348dea2 TA 0 trip count: 1 NSC 1
+PC 7f898348def6 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348df08 target PC: 7f898348dfe0 | Count: 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348df22 target PC: 7f898348e103 | Count: 0
+PC 7f898348dcc8 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348dcf7 target PC: 7f898348e050 | Count: 0
+PC 7f898348dd27 TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+PC 7f89834ffcdd TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+PC 7f898348dd4b TA 0 trip count: 1 NSC 1
+PC 7f898348dd5f TA 0 trip count: 1 NSC 1
+PC 7f898348da8e TA 0 trip count: 1 NSC 1
+PC 7f898348daa2 TA 0 trip count: 1 NSC 1
+PC 7f898348daea TA 0 trip count: 1 NSC 1
+PC 7f898348f139 TA 0 trip count: 1 NSC 1
+PC 7f898348b7db TA 0 trip count: 1 NSC 1
+PC 7f898348f322 TA 0 trip count: 1 NSC 1
+PC 7f898348f32b TA 0 trip count: 1 NSC 1
+PC 7f898361b2c6 TA 0 trip count: 1 NSC 1
+PC 7f898361b33e TA 0 trip count: 1 NSC 1
+PC 7f898361b36d TA 0 trip count: 1 NSC 1
+PC 7f898361b38c TA 0 trip count: 1 NSC 1
+PC 7f898361b3bb TA 0 trip count: 1 NSC 1
+PC 7f898361b5ce TA 0 trip count: 1 NSC 1
+PC 7f898361b5dd TA 0 trip count: 1 NSC 1
+PC 7f898361b5ec TA 0 trip count: 1 NSC 1
+PC 7f898361b5fb TA 0 trip count: 1 NSC 1
+PC 7f898361b60a TA 0 trip count: 1 NSC 1
+PC 7f898361b619 TA 0 trip count: 1 NSC 1
+PC 7f898361b628 TA 0 trip count: 1 NSC 1
+PC 7f898361b637 TA 0 trip count: 1 NSC 1
+PC 7f898361b64e TA 0 trip count: 1 NSC 1
+PC 7f898361b65d TA 0 trip count: 1 NSC 1
+PC 7f898361b66c TA 0 trip count: 1 NSC 1
+PC 7f898361b67b TA 0 trip count: 1 NSC 1
+PC 7f898361b68a TA 0 trip count: 1 NSC 1
+PC 7f898361b699 TA 0 trip count: 1 NSC 1
+PC 7f898361b6a8 TA 0 trip count: 1 NSC 1
+PC 7f898361b6b7 TA 0 trip count: 1 NSC 1
+PC 7f898361b6ce TA 0 trip count: 1 NSC 1
+PC 7f898361b6dd TA 0 trip count: 1 NSC 1
+PC 7f898361b6ec TA 0 trip count: 1 NSC 1
+PC 7f898361b6fb TA 0 trip count: 1 NSC 1
+PC 7f898361b70a TA 0 trip count: 1 NSC 1
+PC 7f898361b719 TA 0 trip count: 1 NSC 1
+PC 7f898361b728 TA 0 trip count: 1 NSC 1
+PC 7f898361b737 TA 0 trip count: 1 NSC 1
+PC 7f898361b746 TA 0 trip count: 1 NSC 1
+PC 7f898361b755 TA 0 trip count: 1 NSC 1
+PC 7f898361b764 TA 0 trip count: 1 NSC 1
+PC 7f898361b773 TA 0 trip count: 1 NSC 1
+PC 7f898361b78e TA 0 trip count: 1 NSC 1
+PC 7f898361b79d TA 0 trip count: 1 NSC 1
+PC 7f898361b7ac TA 0 trip count: 1 NSC 1
+PC 7f898361b7bb TA 0 trip count: 1 NSC 1
+PC 7f898361b7ca TA 0 trip count: 1 NSC 1
+PC 7f898361b7d9 TA 0 trip count: 1 NSC 1
+PC 7f898361b7e8 TA 0 trip count: 1 NSC 1
+PC 7f898361b7f7 TA 0 trip count: 1 NSC 1
+PC 7f898361b806 TA 0 trip count: 1 NSC 1
+PC 7f898361b815 TA 0 trip count: 1 NSC 1
+PC 7f898361b824 TA 0 trip count: 1 NSC 1
+PC 7f898361b833 TA 0 trip count: 1 NSC 1
+PC 7f8997ad54ad TA 0 trip count: 7 NSC 7
+PC 7f8997ad5412 TA 0 trip count: 1 NSC 1
+PC 7f8997ad5581 TA 0 trip count: 2 NSC 2
+PC 7f8983410605 TA 0 trip count: 1 NSC 1
+PC 7f8983429124 TA 0 trip count: 1 NSC 1
+PC 7f8983429145 TA 0 trip count: 1 NSC 1
+PC 7f8983428feb TA 0 trip count: 1 NSC 1
+PC 7f8983429007 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429037 loop start: 7f8983429020 if PC: 7f898342902e target PC: 7f8983429058 | Count: 1
+PC 7f898342905c TA 0 trip count: 1 NSC 1
+PC 7f8983429152 TA 0 trip count: 1 NSC 1
+PC 7f8983429185 TA 0 trip count: 1 NSC 1
+PC 7f8983410624 TA 0 trip count: 1 NSC 1
+PC 7f898341067c TA 0 trip count: 1 NSC 1
+PC 7f898341069f TA 0 trip count: 1 NSC 1
+PC 7f89834106b2 TA 0 trip count: 1 NSC 1
+PC 7f89834106eb TA 0 trip count: 1 NSC 1
+PC 7f8997ae8f9c TA 0 trip count: 1 NSC 1
+PC 7f8983410653 TA 0 trip count: 1 NSC 1
+PC 7f8983426e46 TA 0 trip count: 1 NSC 1
+PC 7f8983410575 TA 0 trip count: 1 NSC 1
+PC 40048f TA 0 trip count: 1 NSC 1
+PC 4004bb TA 0 trip count: 500000 NSC 500000
+PC 7f898342981e TA 0 trip count: 1 NSC 1
+PC 7f898342982f TA 0 trip count: 1 NSC 1
+PC 7f898342985d TA 0 trip count: 1 NSC 1
+PC 7f8983429876 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342990f loop start: 7f8983429889 if PC: 7f89834298b1 target PC: 7f89834299b0 | Count: 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834298bb loop start: 7f898342987c if PC: 7f89834298b1 target PC: 7f89834299b0 | Count: 0
+PC 7f89834299d7 TA 0 trip count: 1 NSC 1
+PC 7f8997ad518d TA 0 trip count: 1 NSC 1
+PC 7f898348293d TA 0 trip count: 1 NSC 1
+PC 7f89834829ee TA 0 trip count: 1 NSC 1
+PC 7f89834829f9 TA 0 trip count: 1 NSC 1
+PC 7f8983482a54 TA 0 trip count: 1 NSC 1
+PC 7f8983482a5d TA 0 trip count: 1 NSC 1
+PC 7f8983482a63 TA 0 trip count: 1 NSC 1
+PC 7f8983482a70 TA 0 trip count: 1 NSC 1
+PC 7f8997ad51b2 TA 0 trip count: 1 NSC 1
+PC 7f8997ad527f TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52d7 TA 0 trip count: 7 NSC 7
+PC 7f8997ad52e1 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1c51 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1c6e TA 0 trip count: 7 NSC 7
+PC 7f8997ae1cb1 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 2 NSC 2
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 2 NSC 2
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 3 NSC 3
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 4 NSC 4
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 6 NSC 6
+PC 7f8997ae1d21 TA 0 trip count: 7 NSC 7
+PC 7f8997af4f8b TA 0 trip count: 1 NSC 1
+PC 7f8997af5017 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d8b TA 0 trip count: 1 NSC 1
+PC 7f8983484319 TA 0 trip count: 1 NSC 1
+PC 7f89834843a7 TA 0 trip count: 1 NSC 1
+PC 7f898348433e TA 0 trip count: 1 NSC 1
+PC 7f8983484347 TA 0 trip count: 1 NSC 1
+PC 7f8997ad532d TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 40041b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 2 NSC 2
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 7f898361b8db TA 0 trip count: 1 NSC 1
+PC 7f898361b8e9 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f898372c44c TA 0 trip count: 1 NSC 1
+PC 7f898372c451 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f89836322c5 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0db5 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0ded TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c3a TA 0 trip count: 1 NSC 1
+PC 7f89836b0c41 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c4f TA 0 trip count: 1 NSC 1
+PC 7f89836b0c6b TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c76 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3cf5 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3d2d TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b7a TA 0 trip count: 1 NSC 1
+PC 7f89836b3b81 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b8f TA 0 trip count: 1 NSC 1
+PC 7f89836b3bab TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3bb6 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+PC 7f8983429463 TA 0 trip count: 4 NSC 4
+PC 7f89834292d6 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 7f8983c058ab TA 0 trip count: 1 NSC 1
+PC 7f8983c058b9 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f89834293a0 TA 0 trip count: 2 NSC 2
+PC 7f89834293a8 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 7f89839d4b61 TA 0 trip count: 1 NSC 1
+PC 7f89839d4b61 TA 0 trip count: 1 NSC 1
+PC 7f89839d5d3b TA 0 trip count: 1 NSC 1
+PC 7f89839d5d49 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f89834293a0 TA 0 trip count: 2 NSC 2
+PC 7f89834293a8 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 2 NSC 2
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad51df TA 0 trip count: 1 NSC 1
+PC 7f8997ad51e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ad51fc TA 0 trip count: 1 NSC 1
+PC 7f8997ad5205 TA 0 trip count: 1 NSC 1
+PC 7f8983429902 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834298bb loop start: 7f898342987c if PC: 7f8983429883 target PC: 7f8983429915 | Count: 4
+PC 7f898342994e TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834299ec loop start: 7f89834298f8 if PC: 7f8983429958 target PC: 7f8983429a55 | Count: 1
+PC 7f898347c3a9 TA 0 trip count: 1 NSC 1
+PC 7f8983479655 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f8983479752 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f8983479752 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f89834798b7 TA 0 trip count: 1 NSC 1
+PC 7f89834798c1 TA 0 trip count: 1 NSC 1
+PC 7f89834798ee TA 0 trip count: 1 NSC 1
+PC 7f898347c3a9 TA 0 trip count: 1 NSC 1
+PC 7f8983479dad TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 0
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+PC 7f8983479e72 TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 1
+PC 7f8983479e0c TA 0 trip count: 1 NSC 1
+PC 7f8983479e16 TA 0 trip count: 1 NSC 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+PC 7f8983479e72 TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 1
+PC 7f8983479e0c TA 0 trip count: 1 NSC 1
+PC 7f8983479e16 TA 0 trip count: 1 NSC 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479e72 target PC: 7f898347a010 | Count: 1
+PC 7f898347a017 TA 0 trip count: 1 NSC 1
+PC 7f898347a021 TA 0 trip count: 1 NSC 1
+PC 7f898347a04e TA 0 trip count: 1 NSC 1
+*** Reached end of trace for Core: 0 Repeating trace: tracer/testcase/myTrace/test9-a-b.xz
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 4 NSC 4
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 9 NSC 9
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a893 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 10
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a8a5 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 2
+PC 7f898342a8d2 TA 0 trip count: 1 NSC 1
+PC 7f89834901a7 TA 0 trip count: 1 NSC 1
+PC 7f898348e1c4 TA 0 trip count: 1 NSC 1
+PC 7f898348e1d8 TA 0 trip count: 1 NSC 1
+PC 7f898348e1e5 TA 0 trip count: 1 NSC 1
+PC 7f898348e337 TA 0 trip count: 1 NSC 1
+PC 7f898348e34f TA 0 trip count: 1 NSC 1
+PC 7f898348e363 TA 0 trip count: 1 NSC 1
+PC 7f898348e377 TA 0 trip count: 1 NSC 1
+PC 7f898348e3b6 TA 0 trip count: 1 NSC 1
+PC 7f898348e868 TA 0 trip count: 1 NSC 1
+PC 7f898348e8c5 TA 0 trip count: 1 NSC 1
+PC 7f898348ec37 TA 0 trip count: 1 NSC 1
+PC 7f898348ec4c TA 0 trip count: 1 NSC 1
+PC 7f898348ec5a TA 0 trip count: 1 NSC 1
+PC 7f898348d992 TA 0 trip count: 1 NSC 1
+PC 7f898348d99f TA 0 trip count: 1 NSC 1
+PC 7f898348d9c3 TA 0 trip count: 1 NSC 1
+PC 7f898348dc1c TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+PC 7f89834ffd3d TA 0 trip count: 1 NSC 1
+PC 7f89834ffce2 TA 0 trip count: 2 NSC 2
+PC 7f89834ffce4 TA 0 trip count: 1 NSC 1
+PC 7f89834ffced TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+PC 7f89834ffcfe TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+PC 7f898348dea2 TA 0 trip count: 1 NSC 1
+PC 7f898348def6 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348df08 target PC: 7f898348dfe0 | Count: 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348df22 target PC: 7f898348e103 | Count: 0
+PC 7f898348dcc8 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348dcf7 target PC: 7f898348e050 | Count: 0
+PC 7f898348dd27 TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+PC 7f89834ffcdd TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+PC 7f898348dd4b TA 0 trip count: 1 NSC 1
+PC 7f898348dd5f TA 0 trip count: 1 NSC 1
+PC 7f898348da8e TA 0 trip count: 1 NSC 1
+PC 7f898348daa2 TA 0 trip count: 1 NSC 1
+PC 7f898348daea TA 0 trip count: 1 NSC 1
+PC 7f898348f139 TA 0 trip count: 1 NSC 1
+PC 7f898348b7db TA 0 trip count: 1 NSC 1
+PC 7f898348f322 TA 0 trip count: 1 NSC 1
+PC 7f898348f32b TA 0 trip count: 1 NSC 1
+PC 7f898361b2c6 TA 0 trip count: 1 NSC 1
+PC 7f898361b33e TA 0 trip count: 1 NSC 1
+PC 7f898361b36d TA 0 trip count: 1 NSC 1
+PC 7f898361b38c TA 0 trip count: 1 NSC 1
+PC 7f898361b3bb TA 0 trip count: 1 NSC 1
+PC 7f898361b5ce TA 0 trip count: 1 NSC 1
+PC 7f898361b5dd TA 0 trip count: 1 NSC 1
+PC 7f898361b5ec TA 0 trip count: 1 NSC 1
+PC 7f898361b5fb TA 0 trip count: 1 NSC 1
+PC 7f898361b60a TA 0 trip count: 1 NSC 1
+PC 7f898361b619 TA 0 trip count: 1 NSC 1
+PC 7f898361b628 TA 0 trip count: 1 NSC 1
+PC 7f898361b637 TA 0 trip count: 1 NSC 1
+PC 7f898361b64e TA 0 trip count: 1 NSC 1
+PC 7f898361b65d TA 0 trip count: 1 NSC 1
+PC 7f898361b66c TA 0 trip count: 1 NSC 1
+PC 7f898361b67b TA 0 trip count: 1 NSC 1
+PC 7f898361b68a TA 0 trip count: 1 NSC 1
+PC 7f898361b699 TA 0 trip count: 1 NSC 1
+PC 7f898361b6a8 TA 0 trip count: 1 NSC 1
+PC 7f898361b6b7 TA 0 trip count: 1 NSC 1
+PC 7f898361b6ce TA 0 trip count: 1 NSC 1
+PC 7f898361b6dd TA 0 trip count: 1 NSC 1
+PC 7f898361b6ec TA 0 trip count: 1 NSC 1
+PC 7f898361b6fb TA 0 trip count: 1 NSC 1
+PC 7f898361b70a TA 0 trip count: 1 NSC 1
+PC 7f898361b719 TA 0 trip count: 1 NSC 1
+PC 7f898361b728 TA 0 trip count: 1 NSC 1
+PC 7f898361b737 TA 0 trip count: 1 NSC 1
+PC 7f898361b746 TA 0 trip count: 1 NSC 1
+PC 7f898361b755 TA 0 trip count: 1 NSC 1
+PC 7f898361b764 TA 0 trip count: 1 NSC 1
+PC 7f898361b773 TA 0 trip count: 1 NSC 1
+PC 7f898361b78e TA 0 trip count: 1 NSC 1
+PC 7f898361b79d TA 0 trip count: 1 NSC 1
+PC 7f898361b7ac TA 0 trip count: 1 NSC 1
+PC 7f898361b7bb TA 0 trip count: 1 NSC 1
+PC 7f898361b7ca TA 0 trip count: 1 NSC 1
+PC 7f898361b7d9 TA 0 trip count: 1 NSC 1
+PC 7f898361b7e8 TA 0 trip count: 1 NSC 1
+PC 7f898361b7f7 TA 0 trip count: 1 NSC 1
+PC 7f898361b806 TA 0 trip count: 1 NSC 1
+PC 7f898361b815 TA 0 trip count: 1 NSC 1
+PC 7f898361b824 TA 0 trip count: 1 NSC 1
+PC 7f898361b833 TA 0 trip count: 1 NSC 1
+PC 7f8997ad54ad TA 0 trip count: 7 NSC 7
+PC 7f8997ad5412 TA 0 trip count: 1 NSC 1
+PC 7f8997ad5581 TA 0 trip count: 2 NSC 2
+PC 7f8983410605 TA 0 trip count: 1 NSC 1
+PC 7f8983429124 TA 0 trip count: 1 NSC 1
+PC 7f8983429145 TA 0 trip count: 1 NSC 1
+PC 7f8983428feb TA 0 trip count: 1 NSC 1
+PC 7f8983429007 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429037 loop start: 7f8983429020 if PC: 7f898342902e target PC: 7f8983429058 | Count: 1
+PC 7f898342905c TA 0 trip count: 1 NSC 1
+PC 7f8983429152 TA 0 trip count: 1 NSC 1
+PC 7f8983429185 TA 0 trip count: 1 NSC 1
+PC 7f8983410624 TA 0 trip count: 1 NSC 1
+PC 7f898341067c TA 0 trip count: 1 NSC 1
+PC 7f898341069f TA 0 trip count: 1 NSC 1
+PC 7f89834106b2 TA 0 trip count: 1 NSC 1
+PC 7f89834106eb TA 0 trip count: 1 NSC 1
+PC 7f8997ae8f9c TA 0 trip count: 1 NSC 1
+PC 7f8983410653 TA 0 trip count: 1 NSC 1
+PC 7f8983426e46 TA 0 trip count: 1 NSC 1
+PC 7f8983410575 TA 0 trip count: 1 NSC 1
+PC 40048f TA 0 trip count: 1 NSC 1
+PC 4004bb TA 0 trip count: 500000 NSC 500000
+PC 7f898342981e TA 0 trip count: 1 NSC 1
+PC 7f898342982f TA 0 trip count: 1 NSC 1
+PC 7f898342985d TA 0 trip count: 1 NSC 1
+PC 7f8983429876 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342990f loop start: 7f8983429889 if PC: 7f89834298b1 target PC: 7f89834299b0 | Count: 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834298bb loop start: 7f898342987c if PC: 7f89834298b1 target PC: 7f89834299b0 | Count: 0
+PC 7f89834299d7 TA 0 trip count: 1 NSC 1
+PC 7f8997ad518d TA 0 trip count: 1 NSC 1
+PC 7f898348293d TA 0 trip count: 1 NSC 1
+PC 7f89834829ee TA 0 trip count: 1 NSC 1
+PC 7f89834829f9 TA 0 trip count: 1 NSC 1
+PC 7f8983482a54 TA 0 trip count: 1 NSC 1
+PC 7f8983482a5d TA 0 trip count: 1 NSC 1
+PC 7f8983482a63 TA 0 trip count: 1 NSC 1
+PC 7f8983482a70 TA 0 trip count: 1 NSC 1
+PC 7f8997ad51b2 TA 0 trip count: 1 NSC 1
+PC 7f8997ad527f TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b0 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52b4 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52d7 TA 0 trip count: 7 NSC 7
+PC 7f8997ad52e1 TA 0 trip count: 1 NSC 1
+PC 7f8997ad52e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1c51 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1c6e TA 0 trip count: 7 NSC 7
+PC 7f8997ae1cb1 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 2 NSC 2
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 2 NSC 2
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 3 NSC 3
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 4 NSC 4
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1cf7 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d08 TA 0 trip count: 1 NSC 1
+PC 7f8997ae185f TA 0 trip count: 1 NSC 1
+PC 7f8997ae1867 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1875 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1882 TA 0 trip count: 6 NSC 6
+PC 7f8997ae1d21 TA 0 trip count: 7 NSC 7
+PC 7f8997af4f8b TA 0 trip count: 1 NSC 1
+PC 7f8997af5017 TA 0 trip count: 1 NSC 1
+PC 7f8997ae1d8b TA 0 trip count: 1 NSC 1
+PC 7f8983484319 TA 0 trip count: 1 NSC 1
+PC 7f89834843a7 TA 0 trip count: 1 NSC 1
+PC 7f898348433e TA 0 trip count: 1 NSC 1
+PC 7f8983484347 TA 0 trip count: 1 NSC 1
+PC 7f8997ad532d TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 40041b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 2 NSC 2
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 7f898361b8db TA 0 trip count: 1 NSC 1
+PC 7f898361b8e9 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f898372c44c TA 0 trip count: 1 NSC 1
+PC 7f898372c451 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429384 loop start: 7f8983429360 if PC: 7f8983429364 target PC: 7f8983429403 | Count: 1
+PC 7f8983429433 TA 0 trip count: 1 NSC 1
+PC 7f89836322c5 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0db5 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0ded TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c3a TA 0 trip count: 1 NSC 1
+PC 7f89836b0c41 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c4f TA 0 trip count: 1 NSC 1
+PC 7f89836b0c6b TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c76 TA 0 trip count: 1 NSC 1
+PC 7f89836b0bef TA 0 trip count: 1 NSC 1
+PC 7f89836b0e02 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c0a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b0c24 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3cf5 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3d2d TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b7a TA 0 trip count: 1 NSC 1
+PC 7f89836b3b81 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b8f TA 0 trip count: 1 NSC 1
+PC 7f89836b3bab TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3bb6 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b2f TA 0 trip count: 1 NSC 1
+PC 7f89836b3d42 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b4a TA 0 trip count: 1 NSC 1
+PC 7f8983469127 TA 0 trip count: 1 NSC 1
+PC 7f89834691cb TA 0 trip count: 1 NSC 1
+PC 7f898346915c TA 0 trip count: 1 NSC 1
+PC 7f8983476c76 TA 0 trip count: 1 NSC 1
+PC 7f8983469170 TA 0 trip count: 1 NSC 1
+PC 7f8983469183 TA 0 trip count: 1 NSC 1
+PC 7f8983469187 TA 0 trip count: 1 NSC 1
+PC 7f89836b3b64 TA 0 trip count: 1 NSC 1
+PC 7f8983429449 TA 0 trip count: 1 NSC 1
+PC 7f8983429456 TA 0 trip count: 1 NSC 1
+PC 7f8983429463 TA 0 trip count: 4 NSC 4
+PC 7f89834292d6 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 7f8983c058ab TA 0 trip count: 1 NSC 1
+PC 7f8983c058b9 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f89834293a0 TA 0 trip count: 2 NSC 2
+PC 7f89834293a8 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ad12a3 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12b4 TA 0 trip count: 1 NSC 1
+PC 7f89839d4b61 TA 0 trip count: 1 NSC 1
+PC 7f89839d4b61 TA 0 trip count: 1 NSC 1
+PC 7f89839d5d3b TA 0 trip count: 1 NSC 1
+PC 7f89839d5d49 TA 0 trip count: 1 NSC 1
+PC 7f898342926c TA 0 trip count: 1 NSC 1
+PC 7f898342927c TA 0 trip count: 1 NSC 1
+PC 7f8983429294 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f8983429384 TA 0 trip count: 1 NSC 1
+PC 7f898342938d TA 0 trip count: 1 NSC 1
+PC 7f8983429397 TA 0 trip count: 1 NSC 1
+PC 7f89834293a0 TA 0 trip count: 2 NSC 2
+PC 7f89834293a8 TA 0 trip count: 1 NSC 1
+PC 7f89834292e2 TA 0 trip count: 1 NSC 1
+PC 7f8983429329 TA 0 trip count: 1 NSC 1
+PC 7f898342932e TA 0 trip count: 1 NSC 1
+PC 7f89834e941e TA 0 trip count: 1 NSC 1
+PC 7f89834e954b TA 0 trip count: 1 NSC 1
+PC 7f8983429341 TA 0 trip count: 1 NSC 1
+PC 7f8997ad12d9 TA 0 trip count: 2 NSC 2
+PC 7f8997ad12e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad534f TA 0 trip count: 1 NSC 1
+PC 7f8997ad535c TA 0 trip count: 1 NSC 1
+PC 7f8997ad128b TA 0 trip count: 1 NSC 1
+PC 7f8997ae8eec TA 0 trip count: 1 NSC 1
+PC 7f8997ad51df TA 0 trip count: 1 NSC 1
+PC 7f8997ad51e5 TA 0 trip count: 1 NSC 1
+PC 7f8997ad51fc TA 0 trip count: 1 NSC 1
+PC 7f8997ad5205 TA 0 trip count: 1 NSC 1
+PC 7f8983429902 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+PC 7f8983429883 TA 0 trip count: 1 NSC 1
+PC 7f89834298a7 TA 0 trip count: 1 NSC 1
+PC 7f89834298b1 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834298bb loop start: 7f898342987c if PC: 7f8983429883 target PC: 7f8983429915 | Count: 4
+PC 7f898342994e TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f89834299ec loop start: 7f89834298f8 if PC: 7f8983429958 target PC: 7f8983429a55 | Count: 1
+PC 7f898347c3a9 TA 0 trip count: 1 NSC 1
+PC 7f8983479655 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f8983479752 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f8983479752 TA 0 trip count: 1 NSC 1
+PC 7f8983479763 TA 0 trip count: 1 NSC 1
+PC 7f8983479780 TA 0 trip count: 1 NSC 1
+PC 7f89834797ba TA 0 trip count: 1 NSC 1
+PC 7f89834797c8 TA 0 trip count: 1 NSC 1
+PC 7f89834797cf TA 0 trip count: 1 NSC 1
+PC 7f89834797dd TA 0 trip count: 1 NSC 1
+PC 7f89834796fc TA 0 trip count: 1 NSC 1
+PC 7f898347970f TA 0 trip count: 1 NSC 1
+PC 7f8983479717 TA 0 trip count: 1 NSC 1
+PC 7f89834798b7 TA 0 trip count: 1 NSC 1
+PC 7f89834798c1 TA 0 trip count: 1 NSC 1
+PC 7f89834798ee TA 0 trip count: 1 NSC 1
+PC 7f898347c3a9 TA 0 trip count: 1 NSC 1
+PC 7f8983479dad TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 0
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+PC 7f8983479e72 TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 1
+PC 7f8983479e0c TA 0 trip count: 1 NSC 1
+PC 7f8983479e16 TA 0 trip count: 1 NSC 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+PC 7f8983479e72 TA 0 trip count: 1 NSC 1
+PC 7f8983479e83 TA 0 trip count: 1 NSC 1
+PC 7f8983479ea0 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479ea5 target PC: 7f898347a068 | Count: 1
+PC 7f8983479e0c TA 0 trip count: 1 NSC 1
+PC 7f8983479e16 TA 0 trip count: 1 NSC 1
+PC 7f8983479e29 TA 0 trip count: 1 NSC 1
+PC 7f8983479e3c TA 0 trip count: 1 NSC 1
+PC 7f8983479e44 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983479f0b loop start: 7f8983479e08 if PC: 7f8983479e72 target PC: 7f898347a010 | Count: 1
+PC 7f898347a017 TA 0 trip count: 1 NSC 1
+PC 7f898347a021 TA 0 trip count: 1 NSC 1
+PC 7f898347a04e TA 0 trip count: 1 NSC 1
+*** Reached end of trace for Core: 0 Repeating trace: tracer/testcase/myTrace/test9-a-b.xz
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 4 NSC 4
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a893 TA 0 trip count: 9 NSC 9
+PC 7f8983557ce8 TA 0 trip count: 1 NSC 1
+PC 7f8983557cfb TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+PC 7f898342a88b TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a893 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 10
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898342a8a5 loop start: 7f898342a880 if PC: 7f898342a88b target PC: 7f898342a8c8 | Count: 2
+PC 7f898342a8d2 TA 0 trip count: 1 NSC 1
+PC 7f89834901a7 TA 0 trip count: 1 NSC 1
+PC 7f898348e1c4 TA 0 trip count: 1 NSC 1
+PC 7f898348e1d8 TA 0 trip count: 1 NSC 1
+PC 7f898348e1e5 TA 0 trip count: 1 NSC 1
+PC 7f898348e337 TA 0 trip count: 1 NSC 1
+PC 7f898348e34f TA 0 trip count: 1 NSC 1
+PC 7f898348e363 TA 0 trip count: 1 NSC 1
+PC 7f898348e377 TA 0 trip count: 1 NSC 1
+PC 7f898348e3b6 TA 0 trip count: 1 NSC 1
+PC 7f898348e868 TA 0 trip count: 1 NSC 1
+PC 7f898348e8c5 TA 0 trip count: 1 NSC 1
+PC 7f898348ec37 TA 0 trip count: 1 NSC 1
+PC 7f898348ec4c TA 0 trip count: 1 NSC 1
+PC 7f898348ec5a TA 0 trip count: 1 NSC 1
+PC 7f898348d992 TA 0 trip count: 1 NSC 1
+PC 7f898348d99f TA 0 trip count: 1 NSC 1
+PC 7f898348d9c3 TA 0 trip count: 1 NSC 1
+PC 7f898348dc1c TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+PC 7f89834ffd3d TA 0 trip count: 1 NSC 1
+PC 7f89834ffce2 TA 0 trip count: 2 NSC 2
+PC 7f89834ffce4 TA 0 trip count: 1 NSC 1
+PC 7f89834ffced TA 0 trip count: 1 NSC 1
+PC 7f89834f7478 TA 0 trip count: 1 NSC 1
+PC 7f89834ffcfe TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+PC 7f898348dea2 TA 0 trip count: 1 NSC 1
+PC 7f898348def6 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348df08 target PC: 7f898348dfe0 | Count: 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348df22 target PC: 7f898348e103 | Count: 0
+PC 7f898348dcc8 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f898348df78 loop start: 7f898348da80 if PC: 7f898348dcf7 target PC: 7f898348e050 | Count: 0
+PC 7f898348dd27 TA 0 trip count: 1 NSC 1
+PC 7f898348cf9b TA 0 trip count: 1 NSC 1
+PC 7f89834ffcdd TA 0 trip count: 1 NSC 1
+PC 7f898348cfaa TA 0 trip count: 1 NSC 1
+PC 7f898348dd4b TA 0 trip count: 1 NSC 1
+PC 7f898348dd5f TA 0 trip count: 1 NSC 1
+PC 7f898348da8e TA 0 trip count: 1 NSC 1
+PC 7f898348daa2 TA 0 trip count: 1 NSC 1
+PC 7f898348daea TA 0 trip count: 1 NSC 1
+PC 7f898348f139 TA 0 trip count: 1 NSC 1
+PC 7f898348b7db TA 0 trip count: 1 NSC 1
+PC 7f898348f322 TA 0 trip count: 1 NSC 1
+PC 7f898348f32b TA 0 trip count: 1 NSC 1
+PC 7f898361b2c6 TA 0 trip count: 1 NSC 1
+PC 7f898361b33e TA 0 trip count: 1 NSC 1
+PC 7f898361b36d TA 0 trip count: 1 NSC 1
+PC 7f898361b38c TA 0 trip count: 1 NSC 1
+PC 7f898361b3bb TA 0 trip count: 1 NSC 1
+PC 7f898361b5ce TA 0 trip count: 1 NSC 1
+PC 7f898361b5dd TA 0 trip count: 1 NSC 1
+PC 7f898361b5ec TA 0 trip count: 1 NSC 1
+PC 7f898361b5fb TA 0 trip count: 1 NSC 1
+PC 7f898361b60a TA 0 trip count: 1 NSC 1
+PC 7f898361b619 TA 0 trip count: 1 NSC 1
+PC 7f898361b628 TA 0 trip count: 1 NSC 1
+PC 7f898361b637 TA 0 trip count: 1 NSC 1
+PC 7f898361b64e TA 0 trip count: 1 NSC 1
+PC 7f898361b65d TA 0 trip count: 1 NSC 1
+PC 7f898361b66c TA 0 trip count: 1 NSC 1
+PC 7f898361b67b TA 0 trip count: 1 NSC 1
+PC 7f898361b68a TA 0 trip count: 1 NSC 1
+PC 7f898361b699 TA 0 trip count: 1 NSC 1
+PC 7f898361b6a8 TA 0 trip count: 1 NSC 1
+PC 7f898361b6b7 TA 0 trip count: 1 NSC 1
+PC 7f898361b6ce TA 0 trip count: 1 NSC 1
+PC 7f898361b6dd TA 0 trip count: 1 NSC 1
+PC 7f898361b6ec TA 0 trip count: 1 NSC 1
+PC 7f898361b6fb TA 0 trip count: 1 NSC 1
+PC 7f898361b70a TA 0 trip count: 1 NSC 1
+PC 7f898361b719 TA 0 trip count: 1 NSC 1
+PC 7f898361b728 TA 0 trip count: 1 NSC 1
+PC 7f898361b737 TA 0 trip count: 1 NSC 1
+PC 7f898361b746 TA 0 trip count: 1 NSC 1
+PC 7f898361b755 TA 0 trip count: 1 NSC 1
+PC 7f898361b764 TA 0 trip count: 1 NSC 1
+PC 7f898361b773 TA 0 trip count: 1 NSC 1
+PC 7f898361b78e TA 0 trip count: 1 NSC 1
+PC 7f898361b79d TA 0 trip count: 1 NSC 1
+PC 7f898361b7ac TA 0 trip count: 1 NSC 1
+PC 7f898361b7bb TA 0 trip count: 1 NSC 1
+PC 7f898361b7ca TA 0 trip count: 1 NSC 1
+PC 7f898361b7d9 TA 0 trip count: 1 NSC 1
+PC 7f898361b7e8 TA 0 trip count: 1 NSC 1
+PC 7f898361b7f7 TA 0 trip count: 1 NSC 1
+PC 7f898361b806 TA 0 trip count: 1 NSC 1
+PC 7f898361b815 TA 0 trip count: 1 NSC 1
+PC 7f898361b824 TA 0 trip count: 1 NSC 1
+PC 7f898361b833 TA 0 trip count: 1 NSC 1
+PC 7f8997ad54ad TA 0 trip count: 7 NSC 7
+PC 7f8997ad5412 TA 0 trip count: 1 NSC 1
+PC 7f8997ad5581 TA 0 trip count: 2 NSC 2
+PC 7f8983410605 TA 0 trip count: 1 NSC 1
+PC 7f8983429124 TA 0 trip count: 1 NSC 1
+PC 7f8983429145 TA 0 trip count: 1 NSC 1
+PC 7f8983428feb TA 0 trip count: 1 NSC 1
+PC 7f8983429007 TA 0 trip count: 1 NSC 1
+ ---> BREAK DETECTED! Updating Trip Count to:  loop PC: 7f8983429037 loop start: 7f8983429020 if PC: 7f898342902e target PC: 7f8983429058 | Count: 1
+PC 7f898342905c TA 0 trip count: 1 NSC 1
+PC 7f8983429152 TA 0 trip count: 1 NSC 1
+PC 7f8983429185 TA 0 trip count: 1 NSC 1
+PC 7f8983410624 TA 0 trip count: 1 NSC 1
+PC 7f898341067c TA 0 trip count: 1 NSC 1
+PC 7f898341069f TA 0 trip count: 1 NSC 1
+PC 7f89834106b2 TA 0 trip count: 1 NSC 1
+PC 7f89834106eb TA 0 trip count: 1 NSC 1
+PC 7f8997ae8f9c TA 0 trip count: 1 NSC 1
+PC 7f8983410653 TA 0 trip count: 1 NSC 1
+PC 7f8983426e46 TA 0 trip count: 1 NSC 1
+PC 7f8983410575 TA 0 trip count: 1 NSC 1
+PC 40048f TA 0 trip count: 1 NSC 1
+Finished CPU 0 instructions: 4000002 cycles: 4592005 cumulative IPC: 0.87108 (Simulation time: 0 hr 0 min 5 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.87108 instructions: 4000002 cycles: 4592005
+ITLB TOTAL     ACCESS:     500025  HIT:     499947  MISS:         78  HIT %:    99.9844  MISS %:  0.0155992   MPKI: 0.0195
+ITLB LOAD TRANSLATION ACCESS:     500025  HIT:     499947  MISS:         78  HIT %:    99.9844  MISS %:  0.0155992   MPKI: 0.0195
+ITLB PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+ITLB USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+ITLB TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+ITLB PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+ITLB AVERAGE MISS LATENCY:    103.731 cycles AVERAGE LOAD MISS LATENCY:       -nan cycles Load Miss          0
+ITLB Average MSHR Occupancy: 0.00115723
+ITLB RQ	ACCESS:     500363	FORWARD:          0	MERGED:        302	TO_CACHE:     500061
+
+DTLB TOTAL     ACCESS:     337032  HIT:     337023  MISS:          9  HIT %:    99.9973  MISS %: 0.00267037   MPKI: 0.00225
+DTLB LOAD TRANSLATION ACCESS:     337032  HIT:     337023  MISS:          9  HIT %:    99.9973  MISS %: 0.00267037   MPKI: 0.00225
+DTLB PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+DTLB USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+DTLB TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+DTLB PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+DTLB AVERAGE MISS LATENCY:    222.222 cycles AVERAGE LOAD MISS LATENCY:       -nan cycles Load Miss          0
+DTLB Average MSHR Occupancy: 0.000272648
+DTLB RQ	ACCESS:     337976	FORWARD:          0	MERGED:        944	TO_CACHE:     337032
+
+STLB TOTAL     ACCESS:        109  HIT:         71  MISS:         38  HIT %:    65.1376  MISS %:    34.8624   MPKI: 0.0095
+STLB LOAD TRANSLATION ACCESS:         87  HIT:         49  MISS:         38  HIT %:    56.3218  MISS %:    43.6782   MPKI: 0.0095
+STLB TRANSLATION FROM L1D PREFETCHER ACCESS:         22  HIT:         22  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+STLB PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+STLB USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+STLB TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+STLB PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+STLB AVERAGE MISS LATENCY:    244.947 cycles AVERAGE LOAD MISS LATENCY:       -nan cycles Load Miss          0
+STLB Average MSHR Occupancy: 0.00125784
+STLB RQ	ACCESS:        143	FORWARD:          0	MERGED:         34	TO_CACHE:        109
+
+STLB Hit, L1D data hit: 0
+STLB Hit, L2C data hit: 0
+STLB Hit, LLC data hit: 0
+STLB Hit, LLC data miss: 0
+STLB STLB hints to L2: 0
+L1D TOTAL     ACCESS:     338023  HIT:     337889  MISS:        134  HIT %:    99.9604  MISS %:  0.0396423   MPKI: 0.0335
+L1D LOAD      ACCESS:     153339  HIT:     153226  MISS:        113  HIT %:    99.9263  MISS %:  0.0736929   MPKI: 0.02825
+L1D RFO       ACCESS:     184628  HIT:     184615  MISS:         13  HIT %:     99.993  MISS %: 0.00704119   MPKI: 0.00325
+L1D PREFETCH  ACCESS:         56  HIT:         48  MISS:          8  HIT %:    85.7143  MISS %:    14.2857   MPKI: 0.002
+AGUS PREFETCH L1 MISS: 0
+L1D PREFETCH  REQUESTED:        115  ISSUED:        115  USEFUL:          1  USELESS:          0
+L1D USEFUL LOAD PREFETCHES:          1 PREFETCH ISSUED TO LOWER LEVEL:          8  ACCURACY: 12.5
+L1D TIMELY PREFETCHES:          1 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L1D PREFETCHES SAME FILL-ORIGIN LEVEL: 8 DIFFERENT FILL-ORIGIN LEVEL: 0
+L1D AVERAGE MISS LATENCY:    218.963 cycles AVERAGE LOAD MISS LATENCY:    216.319 cycles Load Miss        113
+L1D Average MSHR Occupancy: 0.00652809
+L1D RQ	ACCESS:     170462	FORWARD:          0	MERGED:        824	TO_CACHE:     153345
+L1D WQ	ACCESS:    1330880	FORWARD:      16293	MERGED:    1146249	TO_CACHE:     184631
+L1D PQ	ACCESS:         59	FORWARD:          0	MERGED:          3	TO_CACHE:         56
+
+L1D UNIQUE REGIONS ACCESSED: 0
+L1D REGIONS CONFLICTS: 0
+L1D Cross Page Prefetch Requests: 0
+L1D Same Page Prefetch Requests: 79
+L1D ROI Sum of L1D PQ occupancy: 754
+L1D PREFETCHES PUSHED FROM L2C: 0
+L1I TOTAL     ACCESS:     500287  HIT:     498517  MISS:       1770  HIT %:    99.6462  MISS %:   0.353797   MPKI: 0.4425
+L1I LOAD      ACCESS:     500287  HIT:     498517  MISS:       1770  HIT %:    99.6462  MISS %:   0.353797   MPKI: 0.4425
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+L1I TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L1I PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+L1I AVERAGE MISS LATENCY:    32.0305 cycles AVERAGE LOAD MISS LATENCY:    32.0305 cycles Load Miss       1770
+L1I Average MSHR Occupancy:  0.0120538
+L1I RQ	ACCESS:    1663789	FORWARD:          0	MERGED:    1163426	TO_CACHE:     500363
+
+BTB TOTAL     ACCESS:    1330358  HIT:    1329903  MISS:        455  HIT %:    99.9658  MISS %:  0.0342013   MPKI: 0.11375
+BTB BRANCH_DIRECT_JUMP	ACCESS:        342  HIT:        283  MISS:         59
+BTB BRANCH_INDIRECT	ACCESS:         15  HIT:          2  MISS:         13
+BTB BRANCH_CONDITIONAL	ACCESS:    1329242  HIT:    1329125  MISS:        117
+BTB BRANCH_DIRECT_CALL	ACCESS:        258  HIT:        199  MISS:         59
+BTB BRANCH_INDIRECT_CALL	ACCESS:        123  HIT:         68  MISS:         55
+BTB BRANCH_RETURN	ACCESS:        378  HIT:        226  MISS:        152
+BTB BRANCH_OTHER ACCESS:          0  HIT:          0  MISS:          0
+
+L2C TOTAL     ACCESS:       1943  HIT:       1624  MISS:        319  HIT %:    83.5821  MISS %:    16.4179   MPKI: 0.07975
+L2C LOAD      ACCESS:       1883  HIT:       1608  MISS:        275  HIT %:    85.3956  MISS %:    14.6044   MPKI: 0.06875
+L2C DATA LOAD MPKI: 0.02825
+L2C INSTRUCTION LOAD MPKI: 0.0405
+L2C RFO       ACCESS:         13  HIT:          0  MISS:         13  HIT %:          0  MISS %:        100   MPKI: 0.00325
+L2C PREFETCH  ACCESS:          9  HIT:          1  MISS:          8  HIT %:    11.1111  MISS %:    88.8889   MPKI: 0.002
+AGUS PREFETCH L1 MISS: 0
+L2C DATA PREFETCH MPKI: 0.002
+L2C INSTRUCTION PREFETCH MPKI: 0
+L2C LOAD TRANSLATION ACCESS:         38  HIT:         15  MISS:         23  HIT %:    39.4737  MISS %:    60.5263   MPKI: 0.00575
+L2C PREFETCH  REQUESTED:          2  ISSUED:          2  USEFUL:          0  USELESS:          0
+L2C USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          9  ACCURACY: 0
+L2C TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+L2C PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 1
+L2C AVERAGE MISS LATENCY:    201.147 cycles AVERAGE LOAD MISS LATENCY:    198.171 cycles Load Miss        275
+L2C Average MSHR Occupancy:  0.0139649
+L2C RQ	ACCESS:       1934	FORWARD:          0	MERGED:          0	TO_CACHE:       1934
+L2C PQ	ACCESS:         10	FORWARD:          0	MERGED:          0	TO_CACHE:         10
+
+L2C Instructions Evicting Data 0
+L2C Translations Evicting Data 0
+L2C Data Evicting Data 0
+L2C Instructions Evicting Instructions 0
+L2C Translations Evicting Instructions 0
+L2C Data Evicting Instructions 0
+L2C Instructions Evicting Translations 0
+L2C Translations Evicting Translations 0
+L2C Data Evicting Translations 0
+L2C Dense regions hint from L2: 0
+PSCL5 TOTAL     ACCESS:         38  HIT:         38  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+PSCL5 LOAD TRANSLATION ACCESS:         38  HIT:         38  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+PSCL5 PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+PSCL5 USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+PSCL5 TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+PSCL5 PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+
+PSCL4 TOTAL     ACCESS:         38  HIT:         38  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+PSCL4 LOAD TRANSLATION ACCESS:         38  HIT:         38  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+PSCL4 PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+PSCL4 USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+PSCL4 TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+PSCL4 PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+
+PSCL3 TOTAL     ACCESS:         38  HIT:         38  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+PSCL3 LOAD TRANSLATION ACCESS:         38  HIT:         38  MISS:          0  HIT %:        100  MISS %:          0   MPKI: 0
+PSCL3 PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+PSCL3 USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+PSCL3 TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+PSCL3 PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+
+PSCL2 TOTAL     ACCESS:         38  HIT:         37  MISS:          1  HIT %:    97.3684  MISS %:    2.63158   MPKI: 0.00025
+PSCL2 LOAD TRANSLATION ACCESS:         38  HIT:         37  MISS:          1  HIT %:    97.3684  MISS %:    2.63158   MPKI: 0.00025
+PSCL2 PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+PSCL2 USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          0  ACCURACY: -nan
+PSCL2 TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+PSCL2 PREFETCHES SAME FILL-ORIGIN LEVEL: 0 DIFFERENT FILL-ORIGIN LEVEL: 0
+
+LLC TOTAL     ACCESS:        320  HIT:          0  MISS:        320  HIT %:          0  MISS %:        100   MPKI: 0.08
+LLC LOAD      ACCESS:        275  HIT:          0  MISS:        275  HIT %:          0  MISS %:        100   MPKI: 0.06875
+LLC RFO       ACCESS:         13  HIT:          0  MISS:         13  HIT %:          0  MISS %:        100   MPKI: 0.00325
+LLC PREFETCH  ACCESS:          9  HIT:          0  MISS:          9  HIT %:          0  MISS %:        100   MPKI: 0.00225
+AGUS PREFETCH L1 MISS: 0
+LLC LOAD TRANSLATION ACCESS:         23  HIT:          0  MISS:         23  HIT %:          0  MISS %:        100   MPKI: 0.00575
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+LLC USEFUL LOAD PREFETCHES:          0 PREFETCH ISSUED TO LOWER LEVEL:          9  ACCURACY: 0
+LLC TIMELY PREFETCHES:          0 LATE PREFETCHES: 0 DROPPED PREFETCHES: 0
+LLC PREFETCHES SAME FILL-ORIGIN LEVEL: 1 DIFFERENT FILL-ORIGIN LEVEL: 0
+LLC AVERAGE MISS LATENCY:    155.925 cycles AVERAGE LOAD MISS LATENCY:    153.171 cycles Load Miss        275
+LLC Average MSHR Occupancy:  0.0107962
+LLC RQ	ACCESS:        311	FORWARD:          0	MERGED:          0	TO_CACHE:        311
+LLC PQ	ACCESS:          9	FORWARD:          0	MERGED:          0	TO_CACHE:          9
+
+LLC Dense regions hint to LLC: 0
+
+RAW hits: 2491031
+Loads Generated: 2661439
+Loads sent to L1D: 170462
+Stores Generated: 1330829
+Stores sent to L1D: 1330880
+Major fault: 0 Minor fault: 103
+Allocated PAGES: 103
+CPU 0 L1D PC-based stride prefetcher final stats
+Degree: 3
+ All Calls: 240
+ Critical Calls: 240
+------------------
+Depth Distribution
+------------------
+depth 0: 0
+depth 1: 2
+depth 2: 0
+depth 3: 0
+depth 4: 0
+depth 5: 0
+depth 6: 0
+depth 7: 0
+depth 8: 0
+depth 9: 0
+depth 10: 0
+depth 11: 0
+depth 12: 0
+depth 13: 0
+depth 14: 0
+depth 15: 0
+depth 16: 0
+depth 17: 0
+depth 18: 0
+depth 19: 0
+depth 20: 0
+depth 21: 0
+depth 22: 0
+depth 23: 0
+depth 24: 0
+depth 25: 0
+depth 26: 0
+depth 27: 0
+depth 28: 0
+depth 29: 0
+Total: 2
+-----------------------------
+-----------------------------
+	Captured at Filter
+-----------------------------
+depth 0: 0
+depth 1: 0
+depth 2: 0
+depth 3: 0
+depth 4: 0
+depth 5: 0
+depth 6: 0
+depth 7: 0
+depth 8: 0
+depth 9: 0
+depth 10: 0
+depth 11: 0
+depth 12: 0
+depth 13: 0
+depth 14: 0
+depth 15: 0
+depth 16: 0
+depth 17: 0
+depth 18: 0
+depth 19: 0
+depth 20: 0
+depth 21: 0
+depth 22: 0
+depth 23: 0
+depth 24: 0
+depth 25: 0
+depth 26: 0
+depth 27: 0
+depth 28: 0
+depth 29: 0
+-----------------------------
+-----------------------------
+		Lost at Page
+-----------------------------
+depth 0: 0
+depth 1: 0
+depth 2: 0
+depth 3: 0
+depth 4: 0
+depth 5: 0
+depth 6: 0
+depth 7: 0
+depth 8: 0
+depth 9: 0
+depth 10: 0
+depth 11: 0
+depth 12: 0
+depth 13: 0
+depth 14: 0
+depth 15: 0
+depth 16: 0
+depth 17: 0
+depth 18: 0
+depth 19: 0
+depth 20: 0
+depth 21: 0
+depth 22: 0
+depth 23: 0
+depth 24: 0
+depth 25: 0
+depth 26: 0
+depth 27: 0
+depth 28: 0
+depth 29: 0
+-----------------------------
+-----------------------------
+	Lost due to PQ Size
+-----------------------------
+0
+-----------------------------
+ST read accesses: 111
+ST write accesses: 10
+PT read accesses: 918
+PT write accesses: 98
+FILTER read accesses: 428
+FILTER write accesses: 309
+GHR read accesses: 80
+GHR write accesses: 0
+GHR counter read accesses: 374
+GHR counter write accesses: 121
+ST tag read accesses: 35942
+ST tag write accesses: 900
+================ Mockingjay (LLC) Pollution Stats ================
+Total pollution count in LLC: 0
+==================================================================
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:         98  ROW_BUFFER_MISS:        222
+ DBUS_CONGESTED:          0
+ WQ ROW_BUFFER_HIT:          0  ROW_BUFFER_MISS:          0  FULL:          0
+
+ AVG_CONGESTED_CYCLE: -
+ All warmup complete: 2
+Channel 0 Bank busy for read cycles: 0
+Channel 0 Bank busy for write cycles: 0
+Channel 0
+Rank 0
+0banks busy for read cycles: 4560018
+0banks busy for write cycles: 0
+1banks busy for read cycles: 27331
+1banks busy for write cycles: 0
+2banks busy for read cycles: 3774
+2banks busy for write cycles: 0
+3banks busy for read cycles: 334
+3banks busy for write cycles: 0
+4banks busy for read cycles: 426
+4banks busy for write cycles: 0
+5banks busy for read cycles: 123
+5banks busy for write cycles: 0
+6banks busy for read cycles: 0
+6banks busy for write cycles: 0
+7banks busy for read cycles: 0
+7banks busy for write cycles: 0
+8banks busy for read cycles: 0
+8banks busy for write cycles: 0
+
+CPU 0 Branch Prediction Accuracy: 99.9808% MPKI: 0.064 Average ROB Occupancy at Mispredict: 2.97266
+Branch types
+NOT_BRANCH: 2667681 66.692%
+BRANCH_DIRECT_JUMP: 342 0.00855%
+BRANCH_INDIRECT: 15 0.000375%
+BRANCH_CONDITIONAL: 1330609 33.2652%
+BRANCH_DIRECT_CALL: 258 0.00645%
+BRANCH_INDIRECT_CALL: 123 0.003075%
+BRANCH_RETURN: 378 0.00945%
+BRANCH_OTHER: 0 0%
+
+===================== LRU L1D STATS =====================
+Total pollution count in L1D: 0
+=========================================================
+================ SRRIP (L2C) Pollution Stats ================
+Total pollution count in L2c: 0
+==================================================================
+Loop Predictor Table: 
+PC: 7f8983479f0b, Branch Target: 7f8983479e08, Trip Count: 1, Non-speculative Counter: 0
+PC: 7f898342990f, Branch Target: 7f8983429889, Trip Count: 1, Non-speculative Counter: 1
+PC: 7f89834293a0, Branch Target: 7f8983429380, Trip Count: 2, Non-speculative Counter: 0
+PC: 7f8983429463, Branch Target: 7f8983429296, Trip Count: 4, Non-speculative Counter: 0
+PC: 7f89834298bb, Branch Target: 7f898342987c, Trip Count: 4, Non-speculative Counter: 0
+PC: 7f89834299ec, Branch Target: 7f89834298f8, Trip Count: 1, Non-speculative Counter: 0
+PC: 7f8983557d39, Branch Target: 7f8983557d20, Trip Count: 0, Non-speculative Counter: 8
+PC: 7f898342a893, Branch Target: 7f898342a880, Trip Count: 10, Non-speculative Counter: 0
+PC: 7f8983429384, Branch Target: 7f8983429360, Trip Count: 1, Non-speculative Counter: 0
+PC: 7f89834799b6, Branch Target: 7f8983479695, Trip Count: 0, Non-speculative Counter: 3
+PC: 7f898342a8a5, Branch Target: 7f898342a880, Trip Count: 2, Non-speculative Counter: 0
+PC: 7f8997ae1d21, Branch Target: 7f8997ae1cf0, Trip Count: 7, Non-speculative Counter: 0
+PC: 7f8997ad5581, Branch Target: 7f8997ad5560, Trip Count: 2, Non-speculative Counter: 0
+PC: 7f8997ad54c2, Branch Target: 7f8997ad54af, Trip Count: 0, Non-speculative Counter: 4
+PC: 7f8983429037, Branch Target: 7f8983429020, Trip Count: 1, Non-speculative Counter: 0
+PC: 7f898348f334, Branch Target: 7f898348f28f, Trip Count: 0, Non-speculative Counter: 4
+PC: 7f898347a0fb, Branch Target: 7f8983479ded, Trip Count: 0, Non-speculative Counter: 3
+PC: 4004bb, Branch Target: 4004b3, Trip Count: 500000, Non-speculative Counter: 161333
+PC: 7f8997ae18e2, Branch Target: 7f8997ae1889, Trip Count: 0, Non-speculative Counter: 21
+PC: 7f8997ae1c6e, Branch Target: 7f8997ae1c5d, Trip Count: 7, Non-speculative Counter: 0
+PC: 7f898348df78, Branch Target: 7f898348da80, Trip Count: 0, Non-speculative Counter: 1
+PC: 7f8997ad52d7, Branch Target: 7f8997ad52ac, Trip Count: 7, Non-speculative Counter: 0
+PC: 7f8997ae1882, Branch Target: 7f8997ae186e, Trip Count: 6, Non-speculative Counter: 0
+PC: 7f8997af5021, Branch Target: 7f8997af4ff1, Trip Count: 0, Non-speculative Counter: 3
+PC: 7f89834843c1, Branch Target: 7f898348432a, Trip Count: 0, Non-speculative Counter: 3
+PC: 7f8997ad54ad, Branch Target: 7f8997ad5498, Trip Count: 7, Non-speculative Counter: 0
+DRAM PAGES: 1048576
+Allocated PAGES: 103
+
+
+ $PIN_ROOT/pin -t obj-intel64/champsim_tracer.so \                                                                                                                   ░▒▓ INT ✘ ▓▒░
+-s 2608000 -t 5005500 -o ./testcase/myTrace/test9-a-b \
+-- ./testcase/test9 && rm -rf ./testcase/myTrace/test9-a-b.xz  && xz ./testcase/myTrace/test9-a-b

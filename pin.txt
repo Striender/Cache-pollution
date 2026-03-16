@@ -1,0 +1,5 @@
+export PIN_ROOT=~/Downloads/pin-external-4.1-99687-gd9b8f822c-gcc-linux
+echo $PIN_ROOT
+
+to create traces 
+$PIN_ROOT/pin -t obj-intel64/champsim_tracer.so -o ./testcase/myTrace/test1.xz -- ./testcase/test1

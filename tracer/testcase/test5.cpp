@@ -4,7 +4,7 @@ int main() {
     do {
         sink = i;
         i++; 
-        if (i > 300000) // loop run for 300000 iterations, then exit
+        if (i > 300000)                         // loop run for 300000 iterations, then exit
         {
            break;
         }

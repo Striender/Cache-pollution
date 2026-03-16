@@ -1,0 +1,350 @@
+/*
+
+This code implements a hashed perceptron branch predictor using geometric
+history lengths and dynamic threshold setting.
+
+It was written by Daniel A. Jiménez in March 2019. To the extent allowed by
+law, the author abdicates all rights to this work and places it in the public
+domain.
+
+The original perceptron branch predictor is from Jiménez and Lin, "Dynamic
+Branch Prediction with Perceptrons," HPCA 2001.
+
+The idea of using multiple independently indexed tables of perceptron weights
+is from Jiménez, "Fast Path-Based Neural Branch Prediction," MICRO 2003 and
+later expanded in "Piecewise Linear Branch Prediction" from ISCA 2005.
+
+The idea of using hashes of branch history to reduce the number of independent
+tables is documented in three contemporaneous papers:
+
+1. Seznec, "Revisiting the Perceptron Predictor," IRISA technical report, 2004.
+
+2. Tarjan and Skadron, "Revisiting the Perceptron Predictor Again," UVA
+technical report, 2004, expanded and published in ACM TACO 2005 as "Merging
+path and gshare indexing in perceptron branch prediction"; introduces the term
+"hashed perceptron."
+
+3. Loh and Jiménez, "Reducing the Power and Complexity of Path-Based Neural
+Branch Prediction," WCED 2005.
+
+The ideas of using "geometric history lengths" i.e. hashing into tables with
+histories of exponentially increasing length, as well as dynamically adjusting
+the theta parameter, are from Seznec, "The O-GEHL Branch Predictor," from CBP
+2004, expanded later as "Analysis of the O-GEometric History Length Branch
+Predictor" in ISCA 2005.
+
+This code uses these ideas, but prefers simplicity over absolute accuracy (I
+wrote it in about an hour and later spent more time on this comment block than
+I did on the code). These papers and subsequent papers by Jiménez and other
+authors significantly improve the accuracy of perceptron-based predictors but
+involve tricks and analysis beyond the needs of a tool like ChampSim that
+targets cache optimizations. If you want accuracy at any cost, see the winners
+of the latest branch prediction contest, CBP 2016 as of this writing, but
+prepare to have your face melted off by the complexity of the code you find
+there. If you are a student being asked to code a good branch predictor for
+your computer architecture class, don't copy this code; there are much better
+sources for you to plagiarize.
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <unordered_map>
+#include "ooo_cpu.h"
+
+#ifndef BRANCH_CONDITIONAL
+#define BRANCH_CONDITIONAL 3
+#endif
+
+#define MAX_CONF 3
+
+// this many tables
+
+#define NTABLES 16
+
+// maximum history length
+
+#define MAXHIST 232
+
+// minimum history length (for table 1; table 0 is biases)
+
+#define MINHIST 3
+
+// speed for dynamic threshold setting
+
+#define SPEED 18
+
+// geometric global history lengths
+
+int history_lengths[NTABLES] = {0, 3, 4, 6, 8, 10, 14, 19, 26, 36, 49, 67, 91, 125, 170, MAXHIST};
+
+// 12-bit indices for the tables
+
+#define LOG_TABLE_SIZE 12
+#define TABLE_SIZE (1 << LOG_TABLE_SIZE)
+
+// this many 12-bit words will be kept in the global history
+
+#define NGHIST_WORDS (MAXHIST / LOG_TABLE_SIZE + 1)
+
+// tables of 8-bit weights
+
+int tables[NUM_CPUS][NTABLES][TABLE_SIZE];
+
+// words that store the global history
+
+unsigned int ghist_words[NUM_CPUS][NGHIST_WORDS];
+
+// remember the indices into the tables from prediction to update
+
+unsigned int indices[NUM_CPUS][NTABLES];
+
+// initialize theta to something reasonable,
+int
+	theta[NUM_CPUS],
+
+	// initialize counter for threshold setting algorithm
+	tc[NUM_CPUS],
+
+	// perceptron sum
+	yout[NUM_CPUS];
+
+struct LTB_entry
+{
+	uint64_t trip_count = 0;
+	uint64_t speculative_iterations = 0;
+	uint64_t committed_iterations = 0;
+	int confidence = 0;
+};
+
+std::unordered_map<uint64_t, LTB_entry> loop_table[NUM_CPUS];
+
+
+
+void O3_CPU::print_loopPredictor_Table()
+{
+    std::cout << "\n===== Loop Termination Buffer (CPU "
+              << cpu << ") =====\n";
+
+    std::cout << "PC\t\tTrip\tSpec\tComm\tConf\n";
+
+    for (const auto &entry : loop_table[cpu])
+    {
+        const LTB_entry &e = entry.second;
+
+        std::cout << std::hex << entry.first << std::dec
+                  << "\t"
+                  << e.trip_count << "\t"
+                  << e.speculative_iterations << "\t"
+                  << e.committed_iterations << "\t"
+                  << e.confidence << "\n";
+    }
+
+    std::cout << "=====================================\n";
+}
+
+
+
+void O3_CPU::initialize_branch_predictor()
+{
+	// zero out the weights tables
+
+	memset(tables, 0, sizeof(tables));
+
+	// zero out the global history
+
+	memset(ghist_words, 0, sizeof(ghist_words));
+
+	// make a reasonable theta
+
+	for (int i = 0; i < NUM_CPUS; i++)
+		theta[i] = 10;
+}
+
+uint8_t O3_CPU::predict_branch(uint64_t pc)
+{
+
+	// initialize perceptron sum
+
+	yout[cpu] = 0;
+
+	// for each table...
+
+	for (int i = 0; i < NTABLES; i++)
+	{
+
+		// n is the history length for this table
+
+		int n = history_lengths[i];
+
+		// hash global history bits 0..n-1 into x by XORing the words from the ghist_words array
+
+		unsigned int x = 0;
+
+		// most of the words are 12 bits long
+
+		int most_words = n / LOG_TABLE_SIZE;
+
+		// the last word is fewer than 12 bits
+
+		int last_word = n % LOG_TABLE_SIZE;
+
+		// XOR up to the next-to-the-last word
+
+		int j;
+		for (j = 0; j < most_words; j++)
+			x ^= ghist_words[cpu][j];
+
+		// XOR in the last word
+
+		x ^= ghist_words[cpu][j] & ((1 << last_word) - 1);
+
+		// XOR in the PC to spread accesses around (like gshare)
+
+		x ^= pc;
+
+		// stay within the table size
+
+		x &= TABLE_SIZE - 1;
+
+		// remember this index for update
+
+		indices[cpu][i] = x;
+
+		// add the selected weight to the perceptron sum
+
+		yout[cpu] += tables[cpu][i][x];
+	}
+	bool perceptron_prediction = (yout[cpu] >= 1);
+	bool final_prediction = perceptron_prediction;
+
+	auto &LTB = loop_table[cpu];
+	auto it = LTB.find(pc);
+
+	if (it != LTB.end())
+	{
+
+		LTB_entry &entry = it->second;
+
+		if (entry.confidence == MAX_CONF &&
+			entry.trip_count > 0 &&
+			entry.speculative_iterations == entry.trip_count)
+		{
+			final_prediction = 0; // predict loop exit
+		}
+
+		if (final_prediction)
+			entry.speculative_iterations++;
+	}
+
+	return final_prediction;
+}
+
+void O3_CPU::last_branch_result(uint64_t pc,
+                                uint64_t branch_target,
+                                uint8_t taken,
+                                uint8_t branch_type)
+{
+    bool predicted = (yout[cpu] >= 1);
+    bool correct   = (taken == predicted);
+
+    auto &LTB = loop_table[cpu];
+    auto it = LTB.find(pc);
+
+    /* --------- MISPREDICTION RECOVERY --------- */
+
+    if (!correct && it != LTB.end())
+        it->second.speculative_iterations =
+            it->second.committed_iterations;
+
+    /* --------- DETECT BACKWARD LOOP --------- */
+
+    bool is_backward =
+        taken &&
+        branch_target < pc &&
+        branch_type == BRANCH_CONDITIONAL;
+
+    if (it == LTB.end() && is_backward && !correct) {
+        LTB_entry new_entry;
+        LTB[pc] = new_entry;
+        it = LTB.find(pc);
+    }
+
+    /* --------- UPDATE LOOP ENTRY --------- */
+
+    if (it != LTB.end()) {
+
+        LTB_entry &entry = it->second;
+
+        if (taken) {
+            entry.committed_iterations++;
+        }
+        else {
+            if (entry.committed_iterations == entry.trip_count) {
+                if (entry.confidence < MAX_CONF)
+                    entry.confidence++;
+            } else {
+                entry.confidence = 0;
+            }
+
+            uint64_t completed = entry.committed_iterations;
+
+            entry.trip_count = completed;
+
+            if (entry.speculative_iterations >= completed)
+                entry.speculative_iterations -= completed;
+            else
+                entry.speculative_iterations = 0;
+
+            entry.committed_iterations = 0;
+        }
+    }
+
+    /* --------- GLOBAL HISTORY UPDATE --------- */
+
+    bool b = taken;
+
+    for (int i = 0; i < NGHIST_WORDS; i++) {
+
+        ghist_words[cpu][i] <<= 1;
+        ghist_words[cpu][i] |= b;
+
+        b = !!(ghist_words[cpu][i] & TABLE_SIZE);
+        ghist_words[cpu][i] &= TABLE_SIZE - 1;
+    }
+
+    /* --------- PERCEPTRON TRAINING --------- */
+
+    int a = (yout[cpu] < 0) ? -yout[cpu] : yout[cpu];
+
+    if (!correct || a < theta[cpu]) {
+
+        for (int i = 0; i < NTABLES; i++) {
+
+            int *c = &tables[cpu][i][indices[cpu][i]];
+
+            if (taken) {
+                if (*c < 127) (*c)++;
+            } else {
+                if (*c > -128) (*c)--;
+            }
+        }
+
+        if (!correct) {
+            tc[cpu]++;
+            if (tc[cpu] >= SPEED) {
+                theta[cpu]++;
+                tc[cpu] = 0;
+            }
+        }
+        else if (a < theta[cpu]) {
+            tc[cpu]--;
+            if (tc[cpu] <= -SPEED) {
+                theta[cpu]--;
+                tc[cpu] = 0;
+            }
+        }
+    }
+}

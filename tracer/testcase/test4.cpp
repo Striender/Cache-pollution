@@ -4,7 +4,7 @@ int main() {
     do {
         sink = i;
         i++; 
-        if (i > 100000) // loop run for 100001 iterations, then exit
+        if (i > 100000)                 // loop run for 100001 iterations, then exit
         {
            i = 10000001;  
         }
@@ -12,4 +12,5 @@ int main() {
      
     return 0;
 }
+
 

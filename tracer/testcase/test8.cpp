@@ -4,9 +4,9 @@ int main() {
     do {
         sink = i;
         i--; 
-        if (i == 800000) // loop run for 69999 iterations, then exit
+        if (i == 800000)                                    // loop run for 69999 iterations, then exit
         {
-           i = 200000;
+           i = 300000;
         }
     } while (i >= 1  );
      

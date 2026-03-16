@@ -1,0 +1,206 @@
+#!/bin/bash
+set -u
+set -o pipefail
+
+###############################################################################
+# INPUTS
+###############################################################################
+TOTAL_CORES=${1:? "TOTAL_CORES required"}
+RP_SELECTOR=${2:-}
+
+###############################################################################
+# PATHS & CONSTANTS
+###############################################################################
+TRACE_DIR=./workloads/AI_ML
+RESULT_ROOT=./results/results_ai_ml
+BIN_DIR=./bin
+
+WARMUP=200000000
+SIM=200000000
+MAX_CORES_PER_COMBO=15
+
+###############################################################################
+# PREFETCHER COMBINATIONS
+###############################################################################
+PREFETCHER_COMBINATIONS=(
+  #"ipcp_isca2020:ppf"
+  #"ipcp_isca2020:bingo_dpc3"
+  #"ipcp_isca2020:spp"
+  #"ipcp_isca2020:ip_stride"
+#
+  #"vberti:ppf"
+  #"vberti:spp"
+  #"vberti:bingo_dpc3"
+  #"vberti:ip_stride"
+#
+  #"mlop_dpc3:ip_stride"
+  #"mlop_dpc3:ppf"
+  #"mlop_dpc3:spp"
+  #"mlop_dpc3:bingo_dpc3"
+#
+  #"ip_stride:ppf"
+  #"ip_stride:bingo_dpc3"
+  #"ip_stride:spp"
+
+  "ipcp_isca2020:no"
+  "mlop_dpc3:no"
+  "vberti:no"
+  "ip_stride:no"
+
+  "no:spp"
+  "no:bingo_dpc3"
+  "no:ppf"
+  "no:ip_stride"
+)
+
+
+###############################################################################
+# REPLACEMENT POLICIES
+###############################################################################
+repl_policies=(
+  lru srrip drrip hawkeye ship ship++ mockingjay
+  lru srrip drrip hawkeye ship ship++ mockingjay
+)
+
+###############################################################################
+# BUILD RP LIST
+###############################################################################
+RP_LIST=()
+
+if [ -z "$RP_SELECTOR" ]; then
+    RP_LIST=($(seq 1 14))
+elif [[ "$RP_SELECTOR" =~ ^[0-9]+$ ]]; then
+    RP_LIST=("$RP_SELECTOR")
+elif [[ "$RP_SELECTOR" == rp:* ]]; then
+    IFS=',' read -ra RP_LIST <<< "${RP_SELECTOR#rp:}"
+else
+    echo "❌ Invalid RP selector"
+    exit 1
+fi
+
+###############################################################################
+# TRACE / CORE CALCULATION
+###############################################################################
+TRACE_COUNT=$(ls "$TRACE_DIR"/*.champsimtrace.gz | wc -l)
+CORES_PER_COMBO=$TRACE_COUNT
+[ "$CORES_PER_COMBO" -gt "$MAX_CORES_PER_COMBO" ] && CORES_PER_COMBO=$MAX_CORES_PER_COMBO
+
+MAX_PARALLEL_COMBOS=$(( TOTAL_CORES / CORES_PER_COMBO ))
+[ "$MAX_PARALLEL_COMBOS" -lt 1 ] && MAX_PARALLEL_COMBOS=1
+
+echo "=============================================================="
+echo "TOTAL CORES           : $TOTAL_CORES"
+echo "TRACE COUNT           : $TRACE_COUNT"
+echo "CORES PER COMBO       : $CORES_PER_COMBO"
+echo "PARALLEL COMBINATIONS : $MAX_PARALLEL_COMBOS"
+echo "=============================================================="
+
+###############################################################################
+# PREFETCHER NAME → BINARY TOKEN
+###############################################################################
+binary_name() {
+    case "$1" in
+        ipcp_isca2020) echo "ipcp_isca2020" ;;
+        mlop_dpc3)     echo "mlop_dpc3" ;;
+        ip_stride)     echo "ip_stride" ;;
+        no)            echo "no" ;;
+        *)             echo "$1" ;;
+    esac
+}
+
+###############################################################################
+# RUN TRACES (SKIPS rwkv)
+###############################################################################
+run_traces() {
+    local BINARY=$1
+    local OUT_DIR=$2
+
+    mkdir -p "$OUT_DIR"
+    local TMP
+    TMP=$(mktemp)
+
+    for TRACE in "$TRACE_DIR"/*.champsimtrace.gz; do
+        TRACE_FILE=$(basename "$TRACE")
+
+        # 🚫 Skip rwkv traces
+        [[ "$TRACE_FILE" == rwkv* ]] && continue
+
+        NAME="${TRACE_FILE%.champsimtrace.gz}"
+
+        echo "\"$BINARY\" \
+          -warmup_instructions $WARMUP \
+          -simulation_instructions $SIM \
+          -traces \"$TRACE\" \
+          > \"$OUT_DIR/$NAME.out\"" >> "$TMP"
+    done
+
+    JOBS=$(wc -l < "$TMP")
+    echo "🚀 Launching $JOBS traces using $CORES_PER_COMBO cores"
+
+    xargs -P "$CORES_PER_COMBO" -I CMD bash -c CMD < "$TMP"
+    rm -f "$TMP"
+}
+
+###############################################################################
+# RUN ONE COMBINATION
+###############################################################################
+run_one_combo() {
+    local L1=$1
+    local L2=$2
+    shift 2
+    local RP_LIST_LOCAL=("$@")
+
+    if [[ "$L1" != "no" && "$L2" != "no" ]]; then
+        PREF_DIR="pref_l1_l2/${L1}_${L2}"
+    elif [[ "$L1" != "no" ]]; then
+        PREF_DIR="pref_l1/${L1}"
+    elif [[ "$L2" != "no" ]]; then
+        PREF_DIR="pref_l2/${L2}"
+    else
+        PREF_DIR="baseline"
+    fi
+
+    L1_BIN=$(binary_name "$L1")
+    L2_BIN=$(binary_name "$L2")
+
+    for j in "${RP_LIST_LOCAL[@]}"; do
+        [ "$j" -le 7 ] && base="lru" || base="srrip"
+        pol=${repl_policies[$((j-1))]}
+
+        binary="$BIN_DIR/hashed_perceptron-no-${L1_BIN}-${L2_BIN}-no-no-no-no-lru-lru-lru-${base}-${pol}-lru-lru-lru-1core-no"
+
+        if [ ! -x "$binary" ]; then
+            echo "❌ Binary not found: $binary"
+            exit 1
+        fi
+
+        exp_dir="$RESULT_ROOT/$PREF_DIR/exp${j}_${base}_${pol}"
+
+        echo "[RUNNING] $PREF_DIR | RP=$j | ${base}/${pol}"
+        run_traces "$binary" "$exp_dir"
+        echo "[DONE]    $PREF_DIR | RP=$j"
+    done
+}
+
+###############################################################################
+# OUTER PARALLELISM
+###############################################################################
+running_jobs=0
+
+for combo in "${PREFETCHER_COMBINATIONS[@]}"; do
+    IFS=":" read -r L1 L2 <<< "$combo"
+
+    run_one_combo "$L1" "$L2" "${RP_LIST[@]}" &
+    ((running_jobs++))
+
+    if (( running_jobs >= MAX_PARALLEL_COMBOS )); then
+        wait -n
+        ((running_jobs--))
+    fi
+done
+
+wait
+
+echo "=============================================================="
+echo "✅ ALL AI/ML TRACES COMPLETED SUCCESSFULLY"
+echo "=============================================================="

@@ -1,8 +1,8 @@
+
 volatile int sink;
 volatile int sink2;
 int main() {
     int i = 1000;
-   
     do {
         sink = i;
         i--; 
@@ -15,4 +15,5 @@ int main() {
     
     return 0;
 }
+
 

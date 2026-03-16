@@ -1,0 +1,271 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <unordered_map>
+#include <iostream>
+
+#include "ooo_cpu.h"
+#include "instruction.h"
+
+#ifndef BRANCH_CONDITIONAL
+#define BRANCH_CONDITIONAL 3
+#endif
+
+/* ============================================================
+   ORIGINAL PERCEPTRON CONFIG
+   ============================================================ */
+
+#define NTABLES 16
+#define MAXHIST 232
+#define SPEED 18
+
+int history_lengths[NTABLES] =
+    { 0,3,4,6,8,10,14,19,26,36,49,67,91,125,170,MAXHIST };
+
+#define LOG_TABLE_SIZE 12
+#define TABLE_SIZE (1<<LOG_TABLE_SIZE)
+#define NGHIST_WORDS (MAXHIST/LOG_TABLE_SIZE+1)
+
+int tables[NUM_CPUS][NTABLES][TABLE_SIZE];
+unsigned int ghist_words[NUM_CPUS][NGHIST_WORDS];
+unsigned int indices[NUM_CPUS][NTABLES];
+
+int theta[NUM_CPUS], tc[NUM_CPUS], yout[NUM_CPUS];
+
+/* ============================================================
+   LOOP TERMINATION BUFFER
+   ============================================================ */
+struct LTB_entry
+{
+    uint64_t trip_count = 0;
+    uint64_t speculative_iterations = 0;
+    uint64_t committed_iterations = 0;
+    int confidence = 0;
+};
+
+unordered_map<uint64_t, LTB_entry> loop_predictor_table;
+
+#define MAX_CONF 1
+
+// Store final prediction used (needed for correct mispredict detection)
+bool last_prediction[NUM_CPUS];
+
+
+
+void O3_CPU::print_loopPredictor_Table()
+{
+	cout << "Loop Predictor Table:" << endl;
+	cout << "PC\t\t\t\tTrip Count\tSpeculative Iterations\tCommitted Iterations\tConfidence" << endl;
+	for (const auto& entry : loop_predictor_table)
+	{
+		cout << hex << entry.first << dec << "\t\t\t"
+			 << entry.second.trip_count << "\t\t\t"
+			 << entry.second.speculative_iterations << "\t\t\t\t"
+			 << entry.second.committed_iterations << "\t\t\t\t\t\t\t"
+			 << entry.second.confidence << endl;
+	}
+}
+
+/* ============================================================
+   INITIALIZATION
+   ============================================================ */
+
+void O3_CPU::initialize_branch_predictor() {
+
+    memset(tables, 0, sizeof(tables));
+    memset(ghist_words, 0, sizeof(ghist_words));
+
+    for (int i = 0; i < NUM_CPUS; i++)
+        theta[i] = 10;
+}
+
+/* ============================================================
+   PREDICTION
+   ============================================================ */
+uint8_t O3_CPU::predict_branch(uint64_t pc)
+{
+    // -----------------------------
+    // 1. Base perceptron prediction
+    // -----------------------------
+    yout[cpu] = 0;
+
+    for (int i = 0; i < NTABLES; i++)
+    {
+        int n = history_lengths[i];
+
+        unsigned int x = 0;
+        int most_words = n / LOG_TABLE_SIZE;
+        int last_word = n % LOG_TABLE_SIZE;
+
+        int j;
+        for (j = 0; j < most_words; j++)
+            x ^= ghist_words[cpu][j];
+
+        x ^= ghist_words[cpu][j] & ((1 << last_word) - 1);
+        x ^= pc;
+        x &= TABLE_SIZE - 1;
+
+        indices[cpu][i] = x;
+        yout[cpu] += tables[cpu][i][x];
+    }
+
+    bool perceptron_prediction = (yout[cpu] >= 1);
+    bool final_prediction = perceptron_prediction;
+
+    // -----------------------------
+    // 2. Loop predictor override
+    // -----------------------------
+    auto it = loop_predictor_table.find(pc);
+
+    if (it != loop_predictor_table.end())
+    {
+        auto &entry = it->second;
+
+        // Override only if confident and at exit iteration
+        if (entry.confidence == MAX_CONF &&
+            entry.trip_count > 0 &&
+            entry.speculative_iterations == entry.trip_count)
+        {
+            final_prediction = 0; // Predict NOT TAKEN (exit)
+        }
+        else
+        {
+            if (perceptron_prediction)
+                entry.speculative_iterations++;
+        }
+    }
+
+    last_prediction[cpu] = final_prediction;
+    return final_prediction;
+}
+
+
+/* ============================================================
+   UPDATE
+   ============================================================ */
+
+void O3_CPU::last_branch_result(uint64_t pc,
+                                uint64_t branch_target,
+                                uint8_t taken,
+                                uint8_t branch_type)
+{
+    bool is_backward_conditional =
+        (branch_type == BRANCH_CONDITIONAL) &&
+        (branch_target < pc);
+
+    bool mispredict = (taken != last_prediction[cpu]);
+
+    auto it = loop_predictor_table.find(pc);
+
+    // ----------------------------------------
+    // Insert into LTB ONLY on misprediction
+    // ----------------------------------------
+    if (is_backward_conditional && mispredict &&
+        it == loop_predictor_table.end())
+    {
+        LTB_entry new_entry;
+        loop_predictor_table[pc] = new_entry;
+        it = loop_predictor_table.find(pc);
+    }
+
+    // ----------------------------------------
+    // If loop branch already tracked
+    // ----------------------------------------
+    if (it != loop_predictor_table.end() &&
+        is_backward_conditional)
+    {
+        auto &entry = it->second;
+
+        if (taken)
+        {
+            // Loop iteration
+            entry.committed_iterations++;
+        }
+        else
+        {
+            // Loop exit detected
+
+            if (entry.committed_iterations == entry.trip_count)
+                entry.confidence = MAX_CONF;
+            else
+                entry.confidence = 0;
+
+            // Learn trip count
+            entry.committed_iterations++;
+            entry.trip_count = entry.committed_iterations;
+
+            if (entry.speculative_iterations >= entry.committed_iterations)
+                entry.speculative_iterations -= entry.committed_iterations;
+            else
+                entry.speculative_iterations = 0;
+
+            // Reset committed counter
+            entry.committed_iterations = 0;
+        }
+    }
+
+    // ----------------------------------------
+    // Global recovery on misprediction
+    // ----------------------------------------
+    if (mispredict)
+    {
+        for (auto &entry : loop_predictor_table)
+            entry.second.speculative_iterations =
+                entry.second.committed_iterations;
+    }
+
+    // ----------------------------------------
+    // Update global history (unchanged)
+    // ----------------------------------------
+    bool b = taken;
+    for (int i = 0; i < NGHIST_WORDS; i++)
+    {
+        ghist_words[cpu][i] <<= 1;
+        ghist_words[cpu][i] |= b;
+
+        b = !!(ghist_words[cpu][i] & TABLE_SIZE);
+        ghist_words[cpu][i] &= TABLE_SIZE - 1;
+    }
+
+    bool correct = (taken == last_prediction[cpu]);
+    int a = (yout[cpu] < 0) ? -yout[cpu] : yout[cpu];
+
+    if (!correct || a < theta[cpu])
+    {
+        for (int i = 0; i < NTABLES; i++)
+        {
+            int *c = &tables[cpu][i][indices[cpu][i]];
+
+            if (taken)
+            {
+                if (*c < 127)
+                    (*c)++;
+            }
+            else
+            {
+                if (*c > -128)
+                    (*c)--;
+            }
+        }
+
+        if (!correct)
+        {
+            tc[cpu]++;
+            if (tc[cpu] >= SPEED)
+            {
+                theta[cpu]++;
+                tc[cpu] = 0;
+            }
+        }
+        else if (a < theta[cpu])
+        {
+            tc[cpu]--;
+            if (tc[cpu] <= -SPEED)
+            {
+                theta[cpu]--;
+                tc[cpu] = 0;
+            }
+        }
+    }
+}
