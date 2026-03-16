@@ -210,7 +210,7 @@ void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t tak
 	//bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc) && (branch_target != 0);
 	
  
-	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL   ) && (branch_target > pc);
+	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL || branch_type == BRANCH_DIRECT_JUMP ) && (branch_target > pc);
    
 	bool correct = taken == (yout[cpu] >= 1);
 	// Only process if it is a loop branch
@@ -258,7 +258,7 @@ void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t tak
 		{
 			uint64_t loop_pc = pair.first;
 			loopBf_entry& entry = pair.second;
-
+			
 			uint64_t loop_start = entry.targetAddress ; 
 
 			 
