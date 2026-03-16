@@ -53,25 +53,6 @@ sources for you to plagiarize.
 #include <stdlib.h>
 #include <unordered_map>
 #include "ooo_cpu.h"
-#include "instruction.h" // For BRANCH_CONDITIONAL definition
-
-// Ensure BRANCH_CONDITIONAL is defined (value = 3)
-#ifndef BRANCH_CONDITIONAL
-#define BRANCH_CONDITIONAL 3
-#endif
-
-// Loop Predictor structure
-struct LTB_entry
-{
-	uint64_t trip_count;
-	uint64_t speculative_iterations;
-	uint64_t committed_iterations; // non speculative iterations
-	int confidence;
-};
-
-unordered_map<uint64_t, LTB_entry> loop_predictor_table;
-
-#define MAX_CONF 3
 
 // this many tables
 
@@ -124,15 +105,24 @@ int
 	// perceptron sum
 	yout[NUM_CPUS];
 
+// loop iteration count
+
+struct loopBf_entry
+{
+	int trip_count;
+	uint64_t targetAddress;
+	int non_speculatie_counter;
+	int loop_instances; // number of times we've seen this loop execute
+};
+unordered_map<uint64_t, loopBf_entry> loopBuffer;
 
 void O3_CPU::print_loopPredictor_Table()
 {
-	cout << "Loop Predictor Table:" << endl;
-	cout << "PC\tTrip Count\tSpeculative Iterations\tCommitted Iterations\tConfidence" << endl;
-	for (const auto& entry : loop_predictor_table)
+	cout << "Loop Predictor Table: " << endl;
+	for (auto it = loopBuffer.begin(); it != loopBuffer.end(); it++)
 	{
-		cout << hex << entry.first << dec << "\t"
-			 << entry.second.trip_count << endl;
+		if (it->second.targetAddress > 0 /*&& it->second.trip_count > 0 */)
+			cout << "PC: " << hex << it->first << dec << ", Branch Target: " << hex << it->second.targetAddress << dec << ", Trip Count: " << it->second.trip_count << ", Non-speculative Counter: " << it->second.non_speculatie_counter << endl;
 	}
 }
 
@@ -154,6 +144,8 @@ void O3_CPU::initialize_branch_predictor()
 
 uint8_t O3_CPU::predict_branch(uint64_t pc)
 {
+	// cout << "PC: " << hex << pc << dec << endl;
+
 	// initialize perceptron sum
 
 	yout[cpu] = 0;
@@ -162,6 +154,7 @@ uint8_t O3_CPU::predict_branch(uint64_t pc)
 
 	for (int i = 0; i < NTABLES; i++)
 	{
+
 		// n is the history length for this table
 
 		int n = history_lengths[i];
@@ -203,84 +196,90 @@ uint8_t O3_CPU::predict_branch(uint64_t pc)
 		// add the selected weight to the perceptron sum
 
 		yout[cpu] += tables[cpu][i][x];
+
+		
 	}
-	bool perceptron_prediction = (yout[cpu] >= 1);
-
-	auto it = loop_predictor_table.find(pc);
-
-	if (it != loop_predictor_table.end())
-	{
-		auto &entry = it->second;
-
-		if (entry.confidence == MAX_CONF &&
-			entry.speculative_iterations == entry.trip_count)
-		{
-			return 0; // NOT TAKEN (exit)
-		}
-
-		if (perceptron_prediction)
-			entry.speculative_iterations++;
-	}
-
-	return perceptron_prediction;
+	//cout << hex <<pc <<dec << " " << (yout[cpu] >= 1) << endl;
+	return yout[cpu] >= 1;
 }
 
 void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t taken, uint8_t branch_type)
 {
-	// Check if this is a backward conditional branch (loop branch)
-	// Condition: branch_target < pc AND branch is conditional
-	bool is_backward_conditional = (branch_target < pc) && (branch_type == BRANCH_CONDITIONAL);
 
+	bool is_backward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target < pc) ;
+	//bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc) && (branch_target != 0);
+	
+ 
+	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc);
+   
 	bool correct = taken == (yout[cpu] >= 1);
+	// Only process if it is a loop branch
 
-	if (is_backward_conditional)
+	if (is_backward_conditional )
 	{
-		auto it = loop_predictor_table.find(pc);
+		//cout << "PC: " << hex << pc << dec << " ,Branch Target: " << hex << branch_target << dec << ", Correct: " << correct  << endl; ;
+		// NOTE: If you only want to profile loops that mispredict,
+		// wrap this entire block in 'if (misprediction)'
 
-		if (it == loop_predictor_table.end())
+		auto it = loopBuffer.find(pc);
+		if (it == loopBuffer.end() && !correct)
 		{
-			// Insert new entry
-			LTB_entry new_entry;
-			new_entry.trip_count = 0;
-			new_entry.speculative_iterations = 0;
-			new_entry.committed_iterations = 0;
-			new_entry.confidence = 0;
-
-			loop_predictor_table[pc] = new_entry;
-			it = loop_predictor_table.find(pc);
+			// This is the first time we've seen this loop, so we insert it into the loop buffer
+			loopBuffer[pc] = {0, branch_target, 0, 0};
 		}
 
-		// Now update existing entry
+		loopBf_entry &entry = loopBuffer[pc];
+
 		if (taken)
 		{
-			// Loop continues
-			it->second.committed_iterations++;
+			// Loop is continuing
+			//cout << " Taken " << ", Non-speculative Counter: " << entry.non_speculatie_counter << endl;
+			 //cout << " Taken " << endl;
+			entry.non_speculatie_counter++;
 		}
 		else
 		{
-			// Loop exit detected
+			//ut << " Not Taken " << endl;
+			entry.non_speculatie_counter++;
+			//cout << " ----------------------->Not Taken " << ", Non-speculative Counter: " << entry.non_speculatie_counter << endl;
+			//  2. Store it as the trip count
+			entry.trip_count = entry.non_speculatie_counter;
 
-			if (it->second.committed_iterations == it->second.trip_count)
-			{
-				if (it->second.confidence < MAX_CONF)
-					it->second.confidence++;
-			}
-			else
-			{
-				it->second.confidence = 0;
-			}
-
-			// Learn new trip count
-			it->second.trip_count = it->second.committed_iterations;
-
-	
-			// Reset counters
-			it->second.committed_iterations = 0;
-			it->second.speculative_iterations = 0;
+			// 3. Increment loop instances
+			// entry.loop_instances++;
+			cout <<"PC "<< hex <<pc <<dec << " " << entry.non_speculatie_counter << endl;
+			// 4. Reset for the next time the loop runs
+			entry.non_speculatie_counter = 0;
 		}
-	}
+	}else if (is_forward_conditional && taken)
+    {
+        // A forward branch was taken. Check if it escapes an active loop!
+        for (auto& pair : loopBuffer) 
+        {
+            uint64_t loop_pc = pair.first;
+            loopBf_entry& entry = pair.second;
 
-	// insert this branch outcome into the global history
+            // If the jump is located inside the loop (pc < loop_pc) 
+            // BUT lands outside the loop (branch_target > loop_pc), it is a BREAK!
+            if (pc < loop_pc && branch_target > loop_pc) 
+            {
+                cout << " ---> BREAK DETECTED! Updating Trip Count to: " << entry.non_speculatie_counter << endl;
+                
+                // Record the break iteration as the trip count!
+                entry.trip_count = entry.non_speculatie_counter;
+                
+                // Reset the counter for the next time the loop runs
+                entry.non_speculatie_counter = 0;
+            }
+        }
+    }
+
+
+
+	// was this prediction correct?
+
+	// bool correct = taken == (yout[cpu] >= 1);
+	//  insert this branch outcome into the global history
 
 	bool b = taken;
 	for (int i = 0; i < NGHIST_WORDS; i++)
