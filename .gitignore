@@ -7,3 +7,4 @@
 tracer/testcase/myTrace/
 *.trace
 *.out
+trace_gen/*
