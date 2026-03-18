@@ -105,8 +105,11 @@ int
 	// perceptron sum
 	yout[NUM_CPUS];
 
-// loop iteration count
+// to track accuracy
+uint64_t total_loop_exits = 0;
+uint64_t correct_trip_predictions = 0;
 
+// loop iteration count
 struct loopBf_entry
 {
 	int trip_count;
@@ -114,6 +117,9 @@ struct loopBf_entry
 	int non_speculatie_counter;
 	uint64_t ifelse_PC;
 	uint64_t taken_path; // PC of if - else branch (if taken_path is Target_address, then the last taken path was else, otherwise it was if && this is only used in conditional branches)
+	int confidence ;
+	int instance;
+	int loop_exit;
 };
 unordered_map<uint64_t, loopBf_entry> loopBuffer;
 
@@ -122,8 +128,19 @@ void O3_CPU::print_loopPredictor_Table()
 	cout << "Loop Predictor Table: " << endl;
 	for (auto it = loopBuffer.begin(); it != loopBuffer.end(); it++)
 	{
-		if (it->second.targetAddress > 0 /*&& it->second.trip_count > 0 */)
-			cout << "PC: " << hex << it->first << dec << ", Branch Target: " << hex << it->second.targetAddress << dec << ", Trip Count: " << it->second.trip_count << ", Non-speculative Counter: " << it->second.non_speculatie_counter << ", If-Else PC: " << hex << it->second.ifelse_PC << dec << ", Taken Path PC: " << hex << it->second.taken_path << dec << endl;
+		//if (it->second.targetAddress > 0  && it->second.loop_exit > 0/* && it->second.trip_count > 0*/ )
+		cout << "PC: " << hex << it->first << dec << ", Branch Target: " << hex << it->second.targetAddress << dec << ", Trip Count: " << it->second.trip_count << ", Non-speculative Counter: " << it->second.non_speculatie_counter << ", If-Else PC: " << hex << it->second.ifelse_PC << dec << ", Taken Path PC: " << hex << it->second.taken_path << dec << ", Instance: " << it->second.instance - 1 << ", Loop Exit: " << it->second.loop_exit << endl;
+	}
+
+	if (total_loop_exits > 0)
+	{
+		double total_trace_accuracy = ((double)correct_trip_predictions / total_loop_exits) * 100.0;
+
+		cout << "=====================================================" << endl;
+		cout << "OVERALL TRACE TRIP COUNT ACCURACY: " << total_trace_accuracy << "%" << endl;
+		cout << "Correct Predictions: " << correct_trip_predictions << endl;
+		cout << "Total Loop Exits: " << total_loop_exits << endl;
+		cout << "=====================================================" << endl;
 	}
 }
 
@@ -197,36 +214,36 @@ uint8_t O3_CPU::predict_branch(uint64_t pc)
 		// add the selected weight to the perceptron sum
 
 		yout[cpu] += tables[cpu][i][x];
-
-		
 	}
-	//cout << hex <<pc <<dec << " " << (yout[cpu] >= 1) << endl;
+	// cout << hex <<pc <<dec << " " << (yout[cpu] >= 1) << endl;
 	return yout[cpu] >= 1;
 }
 
 void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t taken, uint8_t branch_type)
 {
 
-	bool is_backward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target < pc) ;
-	//bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc) && (branch_target != 0);
-	
- 
-	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL || branch_type == BRANCH_DIRECT_JUMP ) && (branch_target > pc);
-   
+	bool is_backward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target < pc);
+	// bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL) && (branch_target > pc) && (branch_target != 0);
+
+	bool is_forward_conditional = (branch_type == BRANCH_CONDITIONAL || branch_type == BRANCH_DIRECT_JUMP) && (branch_target > pc);
+
 	bool correct = taken == (yout[cpu] >= 1);
 	// Only process if it is a loop branch
 
 	if (is_backward_conditional )
 	{
-		cout << "PC: " << hex << pc << dec << " ,Branch Target: " << hex << branch_target << dec << ", Correct: " << correct  << endl; ;
+		//cout << "PC: " << hex << pc << dec << " ,Branch Target: " << hex << branch_target << dec << ", Correct: " << correct << endl;
+		;
 		// NOTE: If you only want to profile loops that mispredict,
 		// wrap this entire block in 'if (misprediction)'
 
 		auto it = loopBuffer.find(pc);
-		if (it == loopBuffer.end() )
+		if (it == loopBuffer.end())
 		{
 			// This is the first time we've seen this loop, so we insert it into the loop buffer
-			loopBuffer[pc] = {0, branch_target, 0, 0, 0};
+			loopBuffer[pc] = {0, branch_target, 0, 0, 0, 0, 0, 0};
+		}else if(it->second.non_speculatie_counter == 0){
+			total_loop_exits++;
 		}
 
 		loopBf_entry &entry = loopBuffer[pc];
@@ -234,73 +251,103 @@ void O3_CPU::last_branch_result(uint64_t pc, uint64_t branch_target, uint8_t tak
 		if (taken)
 		{
 			// Loop is continuing
-			//cout << " Taken " << ", Non-speculative Counter: " << entry.non_speculatie_counter << endl;
-			 //cout << " Taken " << endl;
+			// cout << " Taken " << ", Non-speculative Counter: " << entry.non_speculatie_counter << endl;
+			// cout << " Taken " << endl;
 			entry.non_speculatie_counter++;
-			//entry.taken_path = branch_target;
+			// entry.taken_path = branch_target;
 		}
 		else
 		{
-			//ut << " Not Taken " << endl;
 			entry.non_speculatie_counter++;
-			//cout << " ----------------------->Not Taken " << ", Non-speculative Counter: " << entry.non_speculatie_counter << endl;
-			//  2. Store it as the trip count
-			entry.trip_count = entry.non_speculatie_counter;
-
-			// 3. Increment loop instances
-			// entry.loop_instances++;
-			cout <<"PC "<< hex <<pc << " TA " <<branch_target <<dec << " " << "trip count: " << entry.trip_count  << " NSC "  <<entry.non_speculatie_counter<< endl;
-			// 4. Reset for the next time the loop runs
+			//cout << "PC " << hex << pc << " TA " << branch_target << dec << " " << "trip count: " << entry.trip_count << " NSC " << entry.non_speculatie_counter  <<", Confidence: " << entry.confidence << ", Loop Exits " << entry.loop_exit << ", Loop instances: " << entry.instance << endl;
 			
+			if (entry.non_speculatie_counter == entry.trip_count)
+				{
+					entry.confidence = 1;
+				}
+				
+			
+			//cout << "PC: " << hex << pc << dec << " ,Branch Target: " << hex << branch_target << dec << " ----------------------->Not Taken " << ", Non-speculative Counter: " << entry.non_speculatie_counter << endl;
+
+			entry.instance++;
+
+			if (entry.confidence == 1 && entry.trip_count !=  0) //entry.trip_count !=  0 this ensure that for the first time we see a loop, we dont count it as a loop exit until we see the same loop again with a trip count (non-speculative counter) of 0, 
+			{
+				entry.loop_exit ++;
+				// 2. Check if the prediction for this specific loop was right
+				if (entry.non_speculatie_counter == entry.trip_count)
+				{
+					correct_trip_predictions++;
+				}
+			}
+
+			if(entry.trip_count != entry.non_speculatie_counter)
+			{
+				entry.confidence = 0; // reset confidence if we see a different trip count
+
+				//  3. Store it as the trip count
+				entry.trip_count = entry.non_speculatie_counter;
+			}
+			
+			// 4. Reset for the next time the loop runs
 			entry.non_speculatie_counter = 0;
 		}
 	}
 	else if (is_forward_conditional && taken)
 	{
-		for (auto& pair : loopBuffer) 
+		for (auto &pair : loopBuffer)
 		{
 			uint64_t loop_pc = pair.first;
-			loopBf_entry& entry = pair.second;
-			
-			uint64_t loop_start = entry.targetAddress ; 
+			loopBf_entry &entry = pair.second;
 
-			 
+			uint64_t loop_start = entry.targetAddress;
+
 			// 1. Ensure loop_start was actually initialized (loop_start != 0)
 			// 2. Jump originates INSIDE the loop body: (pc >= loop_start && pc < loop_pc)
 			// 3. Jump lands OUTSIDE the loop body: (branch_target > loop_pc)
 			// 4. This condition indicates a potential break statement in the loop, so we update our loop buffer entry with the break information
-			if (loop_start != 0 && pc >= loop_start && pc < loop_pc && branch_target > loop_pc) 
+			if (loop_start != 0 && pc >= loop_start && pc < loop_pc && branch_target > loop_pc)
 			{
-				cout << " ---> BREAK DETECTED! Updating Trip Count to: " 
-				     << " loop PC: " << hex << loop_pc 
-					<< " loop start: " << loop_start
-				     << " if PC: " << pc 
-				     << " target PC: " << branch_target 
-				     << " | Count: " << dec << entry.non_speculatie_counter << endl;
-				
-				entry.ifelse_PC = pc; // Store the PC of the if-else branch
+				/*cout << " ---> BREAK DETECTED! Updating Trip Count to: "
+					 << " loop PC: " << hex << loop_pc
+					 << " loop start: " << loop_start
+					 << " if PC: " << pc
+					 << " target PC: " << branch_target
+					 << " | Count: " << dec << entry.non_speculatie_counter << endl;
+*/
+				if (branch_target != 0 && entry.trip_count !=  0 && entry.confidence == 1)
+				{
+					entry.loop_exit ++;
+					// 2. Check if the prediction for this specific loop was right
+					if (entry.non_speculatie_counter == entry.trip_count)
+					{
+						correct_trip_predictions++;
+					}
+				}
+
+				entry.instance++;
+				entry.ifelse_PC = pc;			  // Store the PC of the if-else branch
 				entry.taken_path = branch_target; // Store the taken path (if or else) for this forward conditional branch
 				// Record the break iteration as the trip count
 				entry.trip_count = entry.non_speculatie_counter;
-				
+
 				// Reset the counter for the next time the loop runs
 				entry.non_speculatie_counter = 0;
-			}else if (loop_start != 0 && pc >= loop_start && pc < loop_pc && branch_target <= loop_pc) 
+			}
+			else if (loop_start != 0 && pc >= loop_start && pc < loop_pc && branch_target <= loop_pc)
 			{
-				cout << " ---> IF condition DETECTED within loop! Updating Trip Count to: " 
-				     << " loop PC: " << hex << loop_pc 
-					<< " loop start: " << loop_start
-				     << " if PC: " << pc 
-				     << " target PC: " << branch_target 
-				     << " | Count: " << dec << entry.non_speculatie_counter << endl;
-				
-				entry.ifelse_PC = pc; // Store the PC of the if-else branch
+			/*	cout << " ---> IF condition DETECTED within loop! Updating Trip Count to: "
+					 << " loop PC: " << hex << loop_pc
+					 << " loop start: " << loop_start
+					 << " if PC: " << pc
+					 << " target PC: " << branch_target
+					 << " | Count: " << dec << entry.non_speculatie_counter << endl;
+*/
+				entry.ifelse_PC = pc;			  // Store the PC of the if-else branch
 				entry.taken_path = branch_target; // Store the taken path (if or else) for this forward conditional branch
 			}
 		}
 	}
-
-
 
 	// was this prediction correct?
 
