@@ -1,6 +1,6 @@
 /results/
 /bin/*
-./obj/*
+./obj/
 ./*.log
 *.tmp
 /workloads/*
